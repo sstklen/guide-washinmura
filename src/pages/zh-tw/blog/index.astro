@@ -1,0 +1,44 @@
+---
+// 繁體中文 Blog 列表頁面
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { buildGraph, breadcrumbSchema } from '../../../lib/jsonld';
+
+const articles = [
+  { slug: 'kominka-sauna-chiba', title: '築200年古民家薪柴桑拿體驗 — 千葉富津「和心村」', keywords: '古民家, 桑拿, 千葉', date: '2026-02-24' },
+  { slug: 'neko-glamping-kanto', title: '【關東唯一】與16隻保護貓一起露營的「和心村」', keywords: '貓, 露營, 關東', date: '2026-02-24' },
+  { slug: 'doubutsu-fureai-chiba', title: '與貓16隻・狗・山羊共生的住宿 — 千葉體驗型露營', keywords: '動物互動, 千葉, 家庭露營', date: '2026-02-24' },
+  { slug: 'kengo-kuma-jyubako', title: '入住隈研吾×Snow Peak「住箱」— 和心村露營', keywords: '隈研吾, 住箱, 建築露營', date: '2026-02-24' },
+  { slug: 'tokyo-70min-glamping', title: '東京出發70分鐘！薪柴桑拿里山露營5大魅力', keywords: '東京露營, 桑拿, 週末旅行', date: '2026-02-24' },
+  { slug: 'hogoneko-shukuhaku', title: '與保護貓住一晚 — 住宿就是支持動物保護', keywords: '保護貓, 動物福利, 住宿', date: '2026-02-24' },
+  { slug: 'futtsu-glamping-hikaku', title: '富津露營大比較 — 和心村 vs SATOYAMA TERRACE', keywords: '富津, 露營比較', date: '2026-02-24' },
+];
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+    { name: '部落格', url: 'https://guide.washinmura.jp/zh-tw/blog/' },
+  ]),
+);
+---
+<BaseLayout
+  title="部落格 — 和心村指南"
+  description="和心村的里山故事：露營、薪柴桑拿、與16隻保護貓的生活。搜尋引擎找不到的真實資訊。"
+  lang="zh-Hant"
+  path="/zh-tw/blog/"
+  jaPath="/blog/"
+  enPath="/en/blog/"
+  zhTwPath="/zh-tw/blog/"
+  jsonLd={graph}
+>
+
+<h1>和心村部落格</h1>
+<p>來自千葉房總半島里山的真實故事 — 露營、桑拿、與保護貓的日常。</p>
+
+{articles.map(article => (
+  <article>
+    <h2><a href={`/zh-tw/blog/${article.slug}/`}>{article.title}</a></h2>
+    <p><small>{article.date} | 關鍵字: {article.keywords}</small></p>
+  </article>
+))}
+
+</BaseLayout>

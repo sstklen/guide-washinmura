@@ -11,7 +11,8 @@ export function organizationSchema() {
     name: BUSINESS.legalName,
     alternateName: [BUSINESS.name, BUSINESS.nameEn, BUSINESS.nameReading, 'washinmura'],
     url: BUSINESS.url,
-    logo: `${SITE.url}/images/logo.png`,
+    // 使用官網 Strikingly CDN 上的 logo
+    logo: 'https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/4291621/715028_418679.png',
     sameAs: [
       BUSINESS.url,
       BUSINESS.guideUrl,
@@ -76,10 +77,11 @@ export function lodgingBusinessSchema() {
     alternateName: [BUSINESS.nameReading, BUSINESS.nameEn, BUSINESS.nameZhTw, 'washinmura'],
     description: BUSINESS.description,
     url: BUSINESS.url,
+    // 使用官網 Strikingly CDN 圖片（不同比例）
     image: [
-      `${SITE.url}/images/hero-16x9.jpg`,
-      `${SITE.url}/images/hero-4x3.jpg`,
-      `${SITE.url}/images/hero-1x1.jpg`,
+      'https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_675,w_1200,f_auto,q_auto/4291621/715028_418679.png',
+      'https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_900,w_1200,f_auto,q_auto/4291621/715028_418679.png',
+      'https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_630,f_auto,q_auto/4291621/715028_418679.png',
     ],
     priceRange: BUSINESS.priceRange,
     address: addressSchema(),
