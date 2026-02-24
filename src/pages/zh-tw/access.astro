@@ -1,0 +1,65 @@
+---
+// 交通指南頁面 — 繁體中文版
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+    { name: '交通指南', url: 'https://guide.washinmura.jp/zh-tw/access/' },
+  ]),
+);
+---
+<BaseLayout
+  title="交通指南 — 和心村 Washin Village"
+  description="和心村交通指南：從東京出發開車 80 分鐘（經東京灣跨海公路）。電車：JR 内房線上總湊站 + 15 分鐘免費接送。從羽田機場 60 分鐘。"
+  lang="zh-Hant"
+  path="/zh-tw/access/"
+  jaPath="/access/"
+  enPath="/en/access/"
+  jsonLd={graph}
+>
+
+<h1>如何前往和心村</h1>
+
+<h2>自駕（推薦）— 東京出發 80 分鐘</h2>
+<ol>
+  <li>從東京市中心，走<strong>東京灣跨海公路（Aqua-Line）</strong>（海底隧道＋跨海大橋）</li>
+  <li>接續<strong>館山自動車道</strong></li>
+  <li>在<strong>富津中央 IC</strong> 下交流道</li>
+  <li>開車 15 分鐘即達和心村</li>
+</ol>
+<p><strong>全程約 70-80 分鐘</strong>（從東京市中心出發）</p>
+
+<h2>電車＋免費接送</h2>
+<ol>
+  <li>從東京或千葉搭乘 <strong>JR 内房線</strong></li>
+  <li>在<strong>上總湊站（Kazusa-Minato）</strong>下車</li>
+  <li>免費接送服務（車程 15 分鐘，<strong>需提前預約</strong>）</li>
+</ol>
+
+<h2>從羽田機場出發</h2>
+<p>經東京灣跨海公路，開車約 <strong>60 分鐘</strong>。也提供從羽田機場或東京車站出發的接送方案。</p>
+
+<h2>地址</h2>
+<p>
+  <strong>〒299-1733 千葉縣富津市高溝 14</strong><br />
+  千葉県富津市高溝14（日文地址）<br />
+  14 Takamizo, Futtsu City, Chiba 299-1733, Japan<br />
+  <a href="https://maps.google.com/?q=35.2341,139.8765" target="_blank" rel="noopener">在 Google Maps 上開啟 →</a>
+</p>
+
+<h2>停車場</h2>
+<p>免費停車。每間客房有專屬停車位。大型車輛也歡迎。</p>
+
+<h2>行前小提醒</h2>
+<ul>
+  <li>最近的便利商店約 10 分鐘車程（建議抵達前先採買日用品）</li>
+  <li>手機訊號在部分區域可能較弱（所有客房均有 WiFi）</li>
+  <li>村莊位於山林之中 — 這正是它迷人的地方！</li>
+</ul>
+
+<BookingCTA />
+</BaseLayout>

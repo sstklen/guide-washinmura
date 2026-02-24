@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema, faqPageSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: 'Stay in Kengo Kuma × Snow Peak "Jyubako" — Washin Village Glamping',
+    description: 'Stay overnight in "Jyubako," a mobile house designed by world-renowned architect Kengo Kuma in collaboration with Snow Peak. A 15 sqm all-wood space in Futtsu, Chiba.',
+    slug: 'kengo-kuma-jyubako',
+    datePublished: '2026-02-24',
+    keywords: ['Kengo Kuma', 'glamping', 'Jyubako', 'Snow Peak', 'architecture', 'Chiba glamping', 'design accommodation'],
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+    { name: 'Stay in Kengo Kuma × Snow Peak Jyubako', url: 'https://guide.washinmura.jp/en/blog/kengo-kuma-jyubako/' },
+  ]),
+  faqPageSchema([
+    { question: 'Is the Jyubako hard to book?', answer: 'There is only one Jyubako unit, so weekends and holidays fill up quickly. In spring and autumn especially, it often books out a month in advance. Weekdays tend to have better availability. Reservations are accepted online at d-reserve.jp.', category: 'booking' },
+    { question: 'Does the Jyubako have a private toilet and shower?', answer: 'The Jyubako\'s minimalist design means it does not include an en-suite toilet or shower. Shared facilities are located less than a one-minute walk away and are kept clean. You can also shower after using the wood-fired sauna.', category: 'facilities' },
+    { question: 'Can families with children stay in the Jyubako?', answer: 'The Jyubako is designed for two adults. For families with children, we recommend the Nagayamon (up to 6 guests, 60 sqm, from ¥30,000) or the Nordisk tent (up to 4 guests, from ¥18,000). All overnight guests are welcome to visit the Jyubako for a look even if they are staying in a different room.', category: 'rooms' },
+  ]),
+);
+---
+<BaseLayout
+  title="Stay in Kengo Kuma × Snow Peak 'Jyubako' — Washin Village Glamping"
+  description="Stay overnight in 'Jyubako,' a mobile house designed by world-renowned architect Kengo Kuma in collaboration with Snow Peak. A 15 sqm all-wood space in Futtsu, Chiba."
+  lang="en"
+  path="/en/blog/kengo-kuma-jyubako/"
+  jaPath="/blog/kengo-kuma-jyubako/"
+  enPath="/en/blog/kengo-kuma-jyubako/"
+  jsonLd={graph}
+>
+
+<h1>Stay in Kengo Kuma × Snow Peak "Jyubako" — Washin Village Glamping</h1>
+
+<p>
+  Kengo Kuma — the architect behind Japan's New National Stadium and Takanawa Gateway Station — collaborated with outdoor brand Snow Peak to create a mobile wooden structure called the <strong>Jyubako</strong>. Did you know there is a place in Chiba where you can actually <strong>spend the night inside one</strong>? At <strong>Washin Village</strong>, a glamping facility nestled in the satoyama hills of Futtsu, this rare architectural experience is available to book.
+</p>
+
+<h2>What Is the Jyubako — Kengo Kuma's "Moving House"</h2>
+
+<p>
+  The Jyubako (literally "dwelling box") is a mobile house jointly developed by Kengo Kuma and Associates and Snow Peak. Built around the concept of "the space between architecture and the outdoors," it distills Kuma's design philosophy into just 15 square meters. Because it can be mounted on a trailer and relocated, it has been called a "moving architectural masterpiece" — a concept that challenged traditional ideas of what a building can be when it was first unveiled. It has been featured by design media worldwide and is considered a bucket-list experience among architecture enthusiasts.
+</p>
+<p>
+  The defining feature of the Jyubako is its all-wood minimalist interior. Walls, ceiling, and floor are unified in warm timber. The moment you step inside, the scent and texture of natural wood envelop you. A large picture window frames the outside landscape like a painting — and at Washin Village, that means the rolling satoyama scenery of Chiba's Boso Peninsula in every season. Birdsong at dawn, the chorus of insects at night — the Jyubako puts you right at the boundary of shelter and nature.
+</p>
+<p>
+  "Worth visiting just to see it" is something often said about the Jyubako, yet even finding one on public display is not easy. Places where you can actually <strong>sleep in one</strong> are rarer still — only a handful exist across all of Japan. Washin Village offers a single Jyubako unit as a private room for two guests. It is especially popular with couples and architecture-loving partners looking for a special getaway.
+</p>
+
+<h2>The Jyubako at Washin Village — Amenities and How to Enjoy It</h2>
+
+<p>
+  The Jyubako at Washin Village is a 15-square-meter, two-person space that follows the motto "minimal yet comfortable." It comes equipped with air conditioning and heating, WiFi, and power outlets — cozy in any season. The semi-double bed has quality linens, and the lighting is entirely indirect, casting a soft glow over the wood-lined interior at night. By stripping away the unnecessary, the architecture itself — and the sounds of nature — take center stage.
+</p>
+<p>
+  A night in the Jyubako starts at <strong>¥20,000</strong>, and that price includes access to the <strong>authentic Finnish wood-fired sauna</strong>. Adjust the heat with self-service <em>loyly</em> (pouring water over hot stones), cool down in the cold-plunge tub, and rest in the open air of the satoyama. Sleeping in Kengo Kuma's architecture and recalibrating your body in a wood-fired sauna — this combination exists only at Washin Village. On top of that, 16 rescue cats roam freely on the property, and it is not unusual for one to drop by the Jyubako's terrace for a visit.
+</p>
+<p>
+  For guests with an interest in architecture and design, spend some time studying the Jyubako's construction details up close: the joinery, the window-frame profiles, the way light is channeled through the space — Kuma's design intent is visible everywhere. The structure is also wonderfully photogenic and has become a popular spot for Instagram and other social media.
+</p>
+
+<h2>How to Spend Your Time — A Jyubako Stay Model Itinerary</h2>
+
+<table>
+  <thead>
+    <tr><th>Time</th><th>Activity</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>15:00</td><td>Check in. Step into the Jyubako. Take in the wood-scented interior and snap photos</td></tr>
+    <tr><td>16:00</td><td>Wood-fired sauna session (self-service loyly, cold plunge, open-air rest)</td></tr>
+    <tr><td>17:30</td><td>BBQ dinner prep. Grill local Chiba ingredients over charcoal</td></tr>
+    <tr><td>19:00</td><td>Bonfire time. Firewood is free. Stargazing and conversation by the fire</td></tr>
+    <tr><td>21:00</td><td>Return to the Jyubako. Fall asleep wrapped in the warmth and scent of wood</td></tr>
+    <tr><td>07:00</td><td>Wake to birdsong. Watch the morning light pour through the picture window</td></tr>
+    <tr><td>08:00</td><td>Morning time with the rescue cats — they are most active in the early hours</td></tr>
+    <tr><td>10:00</td><td>Explore the grounds. Meet the dogs and goats</td></tr>
+    <tr><td>11:00</td><td>Check out</td></tr>
+  </tbody>
+</table>
+
+<h2>Room Comparison at Washin Village</h2>
+
+<table>
+  <thead>
+    <tr><th>Room Type</th><th>Capacity</th><th>Size</th><th>Price (tax incl.)</th><th>Highlights</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Jyubako</strong></td><td>2 guests</td><td>15 sqm</td><td>From ¥20,000</td><td>Kengo Kuma design, all-wood minimalist space</td></tr>
+    <tr><td>Kominka</td><td>--</td><td>--</td><td>From ¥25,000</td><td>Authentic 200-year-old farmhouse</td></tr>
+    <tr><td>Nagayamon</td><td>Up to 6</td><td>60 sqm</td><td>From ¥30,000</td><td>Spacious traditional gate house for groups</td></tr>
+    <tr><td>Nordisk Tent</td><td>Up to 4</td><td>30 sqm</td><td>From ¥18,000</td><td>Classic Scandinavian glamping tent</td></tr>
+  </tbody>
+</table>
+
+<p>
+  The Jyubako is a two-person exclusive, making it ideal for couples or partners seeking a special retreat. For groups, consider combining it with the Nagayamon or Nordisk tent. The wood-fired sauna is free for all overnight guests, regardless of room type.
+</p>
+
+<h2>Access</h2>
+
+<p>
+  <strong>Washin Village</strong>: 14 Takamizo, Futtsu, Chiba<br />
+  <strong>About 70-80 minutes from central Tokyo</strong> via the Tokyo Bay Aqua-Line. From Kawasaki-Ukishima IC, take the Aqua-Line, then the Tateyama Expressway to Futtsu-Chuo IC. The village is about 15 minutes from the interchange.<br />
+  Enter "14 Takamizo, Futtsu, Chiba" into your GPS or car navigation. Free parking on site.<br />
+  <strong>By train:</strong> Take the JR Uchibo Line to Aobori Station (the nearest stop) and arrange a taxi or advance-reservation shuttle for the 15-minute ride.<br />
+  Bookings are accepted online only via <strong>d-reserve.jp</strong>.
+</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the Jyubako hard to book?</h3>
+<p>There is only one Jyubako unit, so weekends and holidays fill up quickly. In spring and autumn especially, it often books out a month in advance. Weekdays tend to have better availability. Reservations are accepted online at d-reserve.jp.</p>
+
+<h3>Does the Jyubako have a private toilet and shower?</h3>
+<p>The Jyubako's minimalist design means it does not include an en-suite toilet or shower. Shared facilities are located less than a one-minute walk away and are kept clean. You can also shower after using the wood-fired sauna.</p>
+
+<h3>Can families with children stay in the Jyubako?</h3>
+<p>The Jyubako is designed for two adults. For families with children, we recommend the Nagayamon (up to 6 guests, 60 sqm, from ¥30,000) or the Nordisk tent (up to 4 guests, from ¥18,000). All overnight guests are welcome to visit the Jyubako for a look even if they are staying in a different room.</p>
+
+<BookingCTA />
+
+<h2>Related Articles</h2>
+<ul>
+  <li><a href="/en/blog/kominka-sauna-chiba/">Wood-Fired Sauna in a 200-Year-Old Kominka — Futtsu, Chiba</a></li>
+  <li><a href="/en/blog/neko-glamping-kanto/">Glamping with 16 Rescue Cats — The Only One in Kanto</a></li>
+  <li><a href="/en/blog/doubutsu-fureai-chiba/">Stay with 16 Cats, Dogs & Goats — Animal Glamping in Chiba</a></li>
+  <li><a href="/en/rooms/">Rooms — Kominka, Jyubako, Nagayamon, Tent</a></li>
+  <li><a href="/en/experience/">Experiences — BBQ, Bonfire & Cafe</a></li>
+  <li><a href="/en/pricing/">Pricing</a></li>
+</ul>
+
+</BaseLayout>

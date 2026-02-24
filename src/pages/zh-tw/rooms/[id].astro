@@ -1,0 +1,56 @@
+---
+// 個別客房頁面 — 繁體中文版（動態路由）
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { ROOMS } from '../../../lib/constants';
+import { buildGraph, roomSchema, breadcrumbSchema } from '../../../lib/jsonld';
+
+export function getStaticPaths() {
+  return ROOMS.map(room => ({ params: { id: room.id }, props: { room } }));
+}
+
+const { room } = Astro.props;
+const graph = buildGraph(
+  roomSchema(room),
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+    { name: '客房', url: 'https://guide.washinmura.jp/zh-tw/rooms/' },
+    { name: room.nameEn, url: `https://guide.washinmura.jp/zh-tw/rooms/${room.id}/` },
+  ]),
+);
+---
+<BaseLayout
+  title={`${room.nameEn} — 和心村 Washin Village`}
+  description={`${room.nameEn}：${room.typeEn}，最多容納 ${room.maxOccupancy} 人，${room.area}m²，每晚 ¥${room.priceFrom.toLocaleString()} 起。${room.highlightsEn[0]}。`}
+  lang="zh-Hant"
+  path={`/zh-tw/rooms/${room.id}/`}
+  jaPath={`/rooms/${room.id}/`}
+  enPath={`/en/rooms/${room.id}/`}
+  jsonLd={graph}
+>
+
+<h1>{room.nameEn}</h1>
+<p><strong>{room.typeEn}</strong> — 最多 {room.maxOccupancy} 人 / {room.area}m² / 每晚 ¥{room.priceFrom.toLocaleString()} 起</p>
+
+<h2>特色亮點</h2>
+<ul>
+  {room.highlightsEn.map((h: string) => <li>{h}</li>)}
+</ul>
+
+<h2>設備與備品</h2>
+<ul>
+  {room.amenities.map((a: string) => <li>{a}</li>)}
+</ul>
+
+{room.notSuitableFor.length > 0 && (
+  <>
+    <h2>⚠️ 入住前請留意</h2>
+    <ul>
+      {room.notSuitableFor.map((n: string) => <li>{n}</li>)}
+    </ul>
+  </>
+)}
+
+<p><a href="/zh-tw/rooms/">← 返回客房列表</a></p>
+<BookingCTA />
+</BaseLayout>

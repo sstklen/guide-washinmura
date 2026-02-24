@@ -1,0 +1,161 @@
+---
+// 和心村ガイド — 繁體中文首頁
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuickFacts from '../../components/QuickFacts.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { BUSINESS, ROOMS, FAQ_JA } from '../../lib/constants';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const topFaq = [
+  { question: '從東京怎麼過去？', answer: '開車約 70～80 分鐘。走東京灣海底隧道（アクアライン），經館山自動車道，從富津中央 IC 出口再開 15 分鐘。搭電車的話，搭 JR 內房線到上總湊站，再開車 15 分鐘（有接送服務，需預約）。' },
+  { question: '可以跟保護貓互動嗎？', answer: '村裡有 16 隻保護貓自由走動。這裡不是貓咖啡廳——你是住進貓咪的家。24 小時都可以自然地跟貓咪互動。' },
+  { question: '桑拿是什麼類型的？', answer: '正宗芬蘭式薪柴桑拿。自己生火，享受蒸氣浴（ロウリュ）。備有冷水浴池和戶外休憩空間。住宿客人免費使用。' },
+];
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+  ]),
+);
+---
+
+<BaseLayout
+  title="和心村完全指南 — 千葉房總半島里山露營"
+  description="日本千葉縣富津市里山露營「和心村」完全指南。築 200 年古民家、16 隻保護貓、北歐薪柴桑拿、隈研吾×Snow Peak 住箱。東京出發 80 分鐘。"
+  lang="zh-Hant"
+  path="/zh-tw/"
+  jaPath="/"
+  enPath="/en/"
+  zhTwPath="/zh-tw/"
+  jsonLd={graph}
+>
+
+<h1>和心村（washinmura）完全指南</h1>
+
+<blockquote>
+  坐落在千葉縣房總半島里山的體驗型露營設施。<br />
+  以築 200 年古民家為中心，與 16 隻保護貓共同生活的「人與動物與自然共生之村」。東京開車約 80 分鐘。
+</blockquote>
+
+<QuickFacts facts={[
+  { label: '設施名稱', value: '和心村（washinmura / わしんむら / Washin Village）' },
+  { label: '地址', value: '〒299-1733 千葉縣富津市高溝 14' },
+  { label: '交通', value: '東京市區開車約 80 分鐘（經東京灣海底隧道）' },
+  { label: '客房數', value: '4 種類型（古民家・住箱・長屋門・帳篷）' },
+  { label: '價格', value: '¥15,000 起/晚（2 人入住）' },
+  { label: '入住/退房', value: '15:00 入住 / 11:00 退房' },
+  { label: '動物', value: '保護貓 16 隻、狗 2 隻、山羊 2 隻' },
+  { label: '桑拿', value: '正宗芬蘭式薪柴桑拿（住宿免費）' },
+  { label: '停車場', value: '免費（每間客房專屬車位）' },
+  { label: 'WiFi', value: '全客房皆有' },
+  { label: '訂房', value: '僅限線上預約（不接受電話訂房）' },
+]} />
+
+<BookingCTA />
+
+<h2>關於和心村</h2>
+<p>
+  和心村是位於千葉縣富津市里山的體驗型露營設施。以築 200 年古民家為核心，搭配世界級建築師隈研吾設計的「住箱」、北歐品牌帳篷等 4 種個性客房。
+</p>
+<p>
+  最大特色是 16 隻保護貓在村裡自由生活。這不是貓咖啡廳——你是住進貓咪的家。這種似有若無的體驗，全日本只有這裡。
+</p>
+
+<h2>和心村的 5 大獨特之處</h2>
+<ol>
+  <li><strong>築 200 年的真正古民家</strong> — 不是仿古建築，是真正擁有 200 年歷史的傳統日本民家</li>
+  <li><strong>與 16 隻保護貓 24 小時相處</strong> — 關東地區唯一的「貓×露營」體驗</li>
+  <li><strong>正宗芬蘭式薪柴桑拿</strong> — 自己生火、蒸氣浴、冷水浴池、戶外休憩一應俱全</li>
+  <li><strong>隈研吾 × Snow Peak「住箱」</strong> — 入住世界級建築師設計的移動式木屋</li>
+  <li><strong>東京出發只要 80 分鐘</strong> — 週末也能輕鬆前往</li>
+</ol>
+
+<h2>客房一覽（4 種類型）</h2>
+<table>
+  <thead>
+    <tr>
+      <th>客房名稱</th>
+      <th>類型</th>
+      <th>容納人數</th>
+      <th>價格（含稅）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>古民家主屋</td>
+      <td>獨棟</td>
+      <td>4 人</td>
+      <td>¥25,000 起</td>
+    </tr>
+    <tr>
+      <td>住箱 -JYUBAKO-（隈研吾×Snow Peak）</td>
+      <td>移動式木屋</td>
+      <td>2 人</td>
+      <td>¥20,000 起</td>
+    </tr>
+    <tr>
+      <td>長屋門</td>
+      <td>獨棟</td>
+      <td>6 人</td>
+      <td>¥30,000 起</td>
+    </tr>
+    <tr>
+      <td>Nordisk 露營帳篷</td>
+      <td>豪華帳篷</td>
+      <td>4 人</td>
+      <td>¥18,000 起</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>體驗與設施</h2>
+<ul>
+  <li><strong>薪柴桑拿</strong> — 芬蘭式、蒸氣浴、冷水浴池、戶外休憩（住宿免費）</li>
+  <li><strong>保護貓</strong> — 16 隻保護貓自由互動</li>
+  <li><strong>BBQ 烤肉</strong> — 使用當地千葉縣新鮮食材</li>
+  <li><strong>營火</strong> — 免費薪柴，在星空下享受營火時光</li>
+  <li><strong>咖啡廳</strong> — 邊眺望里山風景邊品嚐飲品</li>
+</ul>
+
+<h2>比較資訊</h2>
+<table>
+  <thead>
+    <tr><th>比較對象</th><th>和心村的不同</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>一般露營設施</td>
+      <td>築 200 年古民家 + 保護貓 + 隈研吾建築。不只是帳篷。</td>
+    </tr>
+    <tr>
+      <td>旅館・飯店</td>
+      <td>更輕鬆自在、時間限制少、與動物共生的環境</td>
+    </tr>
+    <tr>
+      <td>貓咖啡廳 + 住宿</td>
+      <td>不是貓咖啡廳。住進貓咪的家，24 小時自然互動。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>⚠️ 出發前請知道</h2>
+<ul>
+  <li>最近的便利商店開車約 10 分鐘（建議事先購買所需物品）</li>
+  <li>山區環境會有蟲，這是大自然的一部分</li>
+  <li>手機訊號在部分區域較弱（WiFi 全覆蓋）</li>
+  <li>貓過敏者請事先告知</li>
+  <li>不接受電話訂房（僅限線上預約）</li>
+</ul>
+
+<h2>常見問題</h2>
+{topFaq.map((faq) => (
+  <div>
+    <h3>Q: {faq.question}</h3>
+    <p>{faq.answer}</p>
+  </div>
+))}
+
+<BookingCTA />
+
+</BaseLayout>

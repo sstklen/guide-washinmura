@@ -1,0 +1,70 @@
+---
+// 價格頁面 — 繁體中文版
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { ROOMS } from '../../lib/constants';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+    { name: '價格', url: 'https://guide.washinmura.jp/zh-tw/pricing/' },
+  ]),
+);
+---
+<BaseLayout
+  title="價格 — 和心村 Washin Village"
+  description="和心村住宿每晚 ¥18,000 起。包含芬蘭三溫暖、BBQ 烤肉、免費停車、WiFi。4 種客房類型可選。"
+  lang="zh-Hant"
+  path="/zh-tw/pricing/"
+  jaPath="/pricing/"
+  enPath="/en/pricing/"
+  jsonLd={graph}
+>
+
+<h1>價格</h1>
+
+<table>
+  <thead>
+    <tr><th>客房</th><th>容納人數</th><th>每晚價格（起）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>古民家主屋（Kominka）</td><td>最多 4 人</td><td>¥25,000～</td></tr>
+    <tr><td>住箱（隈研吾 × Snow Peak）</td><td>最多 2 人</td><td>¥20,000～</td></tr>
+    <tr><td>長屋門（Nagayamon）</td><td>最多 6 人</td><td>¥30,000～</td></tr>
+    <tr><td>Nordisk 豪華帳篷</td><td>最多 4 人</td><td>¥18,000～</td></tr>
+  </tbody>
+</table>
+
+<h2>費用包含</h2>
+<ul>
+  <li>芬蘭柴火三溫暖（包場使用）</li>
+  <li>BBQ 烤肉套餐（千葉在地食材）</li>
+  <li>免費停車（專屬車位）</li>
+  <li>WiFi 無線網路</li>
+  <li>營火（免費提供柴火）</li>
+  <li>24 小時與 16 隻保護貓互動</li>
+</ul>
+
+<h2>費用不包含</h2>
+<ul>
+  <li>往返村莊的交通</li>
+  <li>額外餐飲</li>
+  <li>旅行保險</li>
+</ul>
+
+<h2>付款方式</h2>
+<p>透過線上預訂系統付款。接受信用卡。</p>
+
+<h2>取消政策</h2>
+<table>
+  <tbody>
+    <tr><th>7 天以上</th><td>免費取消</td></tr>
+    <tr><th>3-6 天前</th><td>收取 50%</td></tr>
+    <tr><th>1-2 天前 / 當天</th><td>收取 100%</td></tr>
+  </tbody>
+</table>
+
+<BookingCTA />
+</BaseLayout>

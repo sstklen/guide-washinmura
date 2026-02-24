@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Access', url: 'https://guide.washinmura.jp/en/access/' },
+  ]),
+);
+---
+<BaseLayout
+  title="How to Get There — Washin Village"
+  description="Access guide to Washin Village in Futtsu, Chiba. 80 min from Tokyo by car via Aqua-Line. Train: JR Uchibo Line to Kazusa-Minato Station + 15 min pickup. 60 min from Haneda Airport."
+  lang="en"
+  path="/en/access/"
+  jaPath="/access/"
+  enPath="/en/access/"
+  jsonLd={graph}
+>
+
+<h1>How to Get to Washin Village</h1>
+
+<h2>By Car (Recommended) — 80 min from Tokyo</h2>
+<ol>
+  <li>From central Tokyo, take the <strong>Tokyo Bay Aqua-Line</strong> (undersea tunnel/bridge)</li>
+  <li>Continue onto the <strong>Tateyama Expressway</strong></li>
+  <li>Exit at <strong>Futtsu-Chuo IC</strong></li>
+  <li>Drive 15 minutes to Washin Village</li>
+</ol>
+<p><strong>Total: ~70-80 minutes</strong> from central Tokyo</p>
+
+<h2>By Train + Pickup</h2>
+<ol>
+  <li>Take the <strong>JR Uchibo Line</strong> from Tokyo/Chiba</li>
+  <li>Get off at <strong>Kazusa-Minato Station</strong> (上総湊駅)</li>
+  <li>Free pickup available (15 min drive, <strong>reservation required</strong>)</li>
+</ol>
+
+<h2>From Haneda Airport</h2>
+<p>Approximately <strong>60 minutes by car</strong> via the Aqua-Line. A pickup plan from Haneda/Tokyo Station is also available.</p>
+
+<h2>Address</h2>
+<p>
+  <strong>14 Takamizo, Futtsu City, Chiba 299-1733, Japan</strong><br />
+  〒299-1733 千葉県富津市高溝14<br />
+  <a href="https://maps.google.com/?q=35.2341,139.8765" target="_blank" rel="noopener">Open in Google Maps →</a>
+</p>
+
+<h2>Parking</h2>
+<p>Free parking available. Each room has its own dedicated parking space. Large vehicles welcome.</p>
+
+<h2>Good to Know</h2>
+<ul>
+  <li>Nearest convenience store: ~10 min by car (buy essentials before arriving)</li>
+  <li>Mobile reception may be weak in some areas (WiFi available in all rooms)</li>
+  <li>The village is in a mountain/forest setting — that's part of the charm!</li>
+</ul>
+
+<BookingCTA />
+</BaseLayout>

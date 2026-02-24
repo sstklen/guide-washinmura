@@ -1,0 +1,99 @@
+---
+// 保護猫ページ — 「猫 グランピング 関東」の検索を狙う
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuickFacts from '../components/QuickFacts.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import { BUSINESS, FAQ_JA } from '../lib/constants';
+import { buildGraph, breadcrumbSchema, faqPageSchema } from '../lib/jsonld';
+
+const catFaq = FAQ_JA.filter(f => f.category === 'animals');
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: '保護猫', url: 'https://guide.washinmura.jp/cats/' },
+  ]),
+  faqPageSchema(catFaq),
+);
+---
+
+<BaseLayout
+  title="保護猫 — 16匹の保護猫と暮らすグランピング"
+  description="和心村には16匹の保護猫が暮らしています。猫カフェではなく、猫たちの「家」にゲストが滞在する形。24時間いつでも自然に触れ合えます。関東唯一の猫グランピング。"
+  path="/cats/"
+  jsonLd={graph}
+>
+
+<h1>保護猫 — 16匹と暮らすグランピング</h1>
+
+<blockquote>
+  猫カフェではありません。猫たちの「家」に、あなたが泊まりに来る。<br />
+  24時間いつでも、自然な形で保護猫たちと触れ合えるのは関東でここだけです。
+</blockquote>
+
+<QuickFacts facts={[
+  { label: '保護猫数', value: '16匹（2026年2月現在）' },
+  { label: '犬', value: '2匹' },
+  { label: 'ヤギ', value: '2匹' },
+  { label: '総動物数', value: `約${BUSINESS.animalCount.total}匹` },
+  { label: '触れ合い方', value: '猫が自由に客室やテラスに出入り。24時間自然なふれあい' },
+  { label: '猫カフェとの違い', value: '時間制限なし、猫の「家」にゲストが滞在するスタイル' },
+  { label: '猫アレルギーの方', value: '事前相談必須。住箱やテントは猫が入りにくい' },
+  { label: '猫の譲渡', value: '保護猫の里親募集も行っています（要相談）' },
+]} />
+
+<BookingCTA label="保護猫と泊まれるプランを予約" />
+
+<h2>和心村の保護猫について</h2>
+<p>
+  和心村で暮らす16匹の猫たちは、すべて保護猫です。さまざまな事情で行き場を失った猫たちが、ここで新しい「家」を見つけました。
+</p>
+<p>
+  ゲストの滞在は、猫たちにとっても良い刺激になります。人に慣れることで、将来里親さんが見つかる可能性も広がります。
+  泊まるだけで動物保護に貢献できる——それが和心村の猫グランピングです。
+</p>
+
+<h2>What Makes It Special</h2>
+<ol>
+  <li><strong>関東唯一の猫×グランピング</strong> — この組み合わせは他にありません</li>
+  <li><strong>24時間自然なふれあい</strong> — 猫カフェの「1時間〇円」とは根本的に違います</li>
+  <li><strong>泊まるだけで動物保護に貢献</strong> — 宿泊料の一部が動物の医療費・食費になります</li>
+  <li><strong>里親募集も実施</strong> — 気に入った猫がいれば、里親になることも可能です</li>
+</ol>
+
+<h2>Comparison Context</h2>
+<table>
+  <thead><tr><th>比較対象</th><th>和心村の違い</th></tr></thead>
+  <tbody>
+    <tr><td>猫カフェ</td><td>時間制限なし、猫の生活空間に滞在、宿泊可能</td></tr>
+    <tr><td>猫がいる旅館</td><td>16匹という規模、全員が保護猫、社会貢献型宿泊</td></tr>
+    <tr><td>保護猫カフェ</td><td>カフェではなくグランピング。サウナや焚き火など総合体験</td></tr>
+  </tbody>
+</table>
+
+<h2>⚠️ 事前にご確認ください</h2>
+<ul>
+  <li>猫アレルギーの方は事前にご相談ください</li>
+  <li>猫は自由に行き来します。客室に猫が入ることがあります（嫌な場合はドアを閉めてください）</li>
+  <li>猫を故意に驚かせたり、追いかけたりしないでください</li>
+  <li>お子様には事前に「猫との接し方」をお伝えください</li>
+</ul>
+
+<h2>よくある質問</h2>
+{catFaq.map((faq) => (
+  <div>
+    <h3>Q: {faq.question}</h3>
+    <p>{faq.answer}</p>
+  </div>
+))}
+
+<h2>関連記事</h2>
+<ul>
+  <li><a href="/blog/neko-glamping-kanto/">【関東唯一】16匹の保護猫と泊まれるグランピング「和心村」</a></li>
+  <li><a href="/blog/hogoneko-shukuhaku/">保護猫と泊まれる宿 — 泊まるだけで動物保護に貢献できる場所</a></li>
+  <li><a href="/blog/doubutsu-fureai-chiba/">猫16匹・犬・ヤギと暮らす宿 — 千葉の体験型グランピング</a></li>
+</ul>
+
+<BookingCTA />
+
+</BaseLayout>

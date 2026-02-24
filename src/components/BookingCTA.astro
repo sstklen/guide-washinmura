@@ -1,0 +1,62 @@
+---
+// 預約 CTA 按鈕（所有頁面的兩個出口之一）
+import { BUSINESS } from '../lib/constants';
+
+interface Props {
+  /** 顯示文字 */
+  label?: string;
+  /** 是否也顯示官網連結 */
+  showOfficialSite?: boolean;
+}
+
+const {
+  label = '予約する — Book Now',
+  showOfficialSite = true,
+} = Astro.props;
+---
+
+<div class="cta-box">
+  <a href={BUSINESS.bookingUrl} class="cta-booking" target="_blank" rel="noopener">
+    {label}
+  </a>
+  {showOfficialSite && (
+    <a href={BUSINESS.url} class="cta-official" target="_blank" rel="noopener">
+      公式サイトで写真を見る →
+    </a>
+  )}
+</div>
+
+<style>
+  .cta-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #fef3c7;
+    border-radius: 8px;
+  }
+  .cta-booking {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: #d97706;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+  }
+  .cta-booking:hover {
+    background: #b45309;
+  }
+  .cta-official {
+    color: #92400e;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .cta-official:hover {
+    text-decoration: underline;
+  }
+</style>

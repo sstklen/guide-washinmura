@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { ROOMS } from '../../../lib/constants';
+import { buildGraph, roomSchema, breadcrumbSchema } from '../../../lib/jsonld';
+
+export function getStaticPaths() {
+  return ROOMS.map(room => ({ params: { id: room.id }, props: { room } }));
+}
+
+const { room } = Astro.props;
+const graph = buildGraph(
+  roomSchema(room),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Rooms', url: 'https://guide.washinmura.jp/en/rooms/' },
+    { name: room.nameEn, url: `https://guide.washinmura.jp/en/rooms/${room.id}/` },
+  ]),
+);
+---
+<BaseLayout
+  title={`${room.nameEn} — Washin Village`}
+  description={`${room.nameEn}: ${room.typeEn}, up to ${room.maxOccupancy} guests, ${room.area}m², from ¥${room.priceFrom.toLocaleString()}/night. ${room.highlightsEn[0]}.`}
+  lang="en"
+  path={`/en/rooms/${room.id}/`}
+  jaPath={`/rooms/${room.id}/`}
+  enPath={`/en/rooms/${room.id}/`}
+  jsonLd={graph}
+>
+
+<h1>{room.nameEn}</h1>
+<p><strong>{room.typeEn}</strong> — Up to {room.maxOccupancy} guests / {room.area}m² / From ¥{room.priceFrom.toLocaleString()}/night</p>
+
+<h2>Highlights</h2>
+<ul>
+  {room.highlightsEn.map((h: string) => <li>{h}</li>)}
+</ul>
+
+<h2>Amenities</h2>
+<ul>
+  {room.amenities.map((a: string) => <li>{a}</li>)}
+</ul>
+
+{room.notSuitableFor.length > 0 && (
+  <>
+    <h2>Not Recommended For</h2>
+    <ul>
+      {room.notSuitableFor.map((n: string) => <li>{n}</li>)}
+    </ul>
+  </>
+)}
+
+<p><a href="/en/rooms/">← Back to all rooms</a></p>
+<BookingCTA />
+</BaseLayout>

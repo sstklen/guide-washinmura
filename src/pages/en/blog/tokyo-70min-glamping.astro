@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: '70 Minutes from Tokyo: 5 Reasons to Try Satoyama Glamping with a Wood-Fired Sauna',
+    description: 'Just 70 minutes from Tokyo via the Aqua-Line. Washin Village in Futtsu, Chiba offers wood-fired sauna, 16 rescue cats, a 200-year-old farmhouse, and Kengo Kuma\'s Jyubako mobile house — the perfect weekend escape.',
+    slug: 'tokyo-70min-glamping',
+    datePublished: '2026-02-24',
+    keywords: ['glamping near Tokyo', 'sauna glamping', 'Chiba glamping', 'weekend getaway Tokyo', 'Aqua-Line glamping'],
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+    { name: '70 Min from Tokyo: Satoyama Glamping', url: 'https://guide.washinmura.jp/en/blog/tokyo-70min-glamping/' },
+  ]),
+);
+---
+<BaseLayout
+  title="70 Minutes from Tokyo: 5 Reasons to Try Satoyama Glamping with a Wood-Fired Sauna — Washin Village"
+  description="Just 70 minutes from Tokyo via the Aqua-Line. Wood-fired sauna, 16 rescue cats, a 200-year-old farmhouse, and Kengo Kuma's Jyubako — the ultimate weekend escape in Futtsu, Chiba."
+  lang="en"
+  path="/en/blog/tokyo-70min-glamping/"
+  jaPath="/blog/tokyo-70min-glamping/"
+  enPath="/en/blog/tokyo-70min-glamping/"
+  jsonLd={graph}
+>
+
+<h1>70 Minutes from Tokyo: 5 Reasons to Try Satoyama Glamping with a Wood-Fired Sauna</h1>
+
+<p>"I'd love to go glamping, but I just don't have the time to travel far." If you live in Tokyo and feel this way, you're not alone. The good news: there's a glamping retreat called Washin Village (washinmura) nestled in the satoyama hills of Futtsu City, Chiba Prefecture — just 70 minutes from central Tokyo by car. Cross the Tokyo Bay Aqua-Line, and you'll arrive at a place that feels like a completely different world. Even a one-night weekend trip is more than enough to recharge. Here are five reasons why Washin Village is the perfect quick escape from the city.</p>
+
+<h2>1. Authentic Finnish-Style Wood-Fired Sauna — Free for Guests</h2>
+
+<p>Washin Village's standout feature is its authentic Finnish-style wood-fired sauna. This isn't an electric or gas sauna — it's heated by real firewood, the traditional way. It supports self-loyly (pouring water over the sauna stones yourself to create steam), so you can adjust the temperature and humidity exactly to your liking. Sit back, listen to the crackle of burning wood, and feel the warmth penetrate deep into your body.</p>
+
+<p>After a thorough sauna session, cool down in the cold plunge, then settle into the outdoor rest area to feel the satoyama breeze on your skin. The view: lush green hills and rice paddies stretching out before you. This is "totonou" (the blissful post-sauna state) that no urban sauna facility can replicate. The sauna is included free for all overnight guests, so many visitors head straight there after check-in — and go again the next morning.</p>
+
+<h2>2. A Stay with 16 Rescue Cats</h2>
+
+<p>Washin Village is home to 16 rescue cats. These aren't cats kept in cages like at a cat cafe — they roam freely throughout the property, living life entirely on their own terms. You'll find cats sunbathing on the terrace, wandering over to the BBQ area, or climbing onto your lap as the evening settles in. The closeness is unlike anything you've experienced — it feels like visiting a countryside relative's house that happens to be full of cats.</p>
+
+<p>Rescue cats (hogoneko) are cats that have lost their owners for various reasons and been taken into protective care. Washin Village provides them with a safe home while fostering understanding of animal welfare through natural interaction with guests. Whether you're a lifelong cat lover or someone who can't keep pets at home, spending time with these cats is a genuinely special experience. There are also 2 dogs and 2 goats on the property — an animal lover's paradise.</p>
+
+<h2>3. A 200-Year-Old Farmhouse — The Atmosphere Only Authenticity Can Deliver</h2>
+
+<p>The main building at Washin Village is a real kominka (traditional Japanese farmhouse) that is over 200 years old. This is not a newly built structure designed to "look old." The beams and pillars that have stood for two centuries remain intact — darkened columns with a deep patina, ceiling beams still showing hand-adze marks, and wood that has aged to a rich amber tone over the generations. These are things that simply cannot be replicated artificially.</p>
+
+<p>Rates for the farmhouse start at 25,000 yen per night. Sit around the irori (traditional sunken hearth), watch morning light filter through paper shoji screens, and gaze out at the satoyama landscape from the engawa (veranda). Simply being in this space changes how time feels. For anyone who loves historic buildings or Japanese traditional architecture, this room alone is worth the trip. Rest assured — the plumbing and amenities have been fully modernized for comfort.</p>
+
+<h2>4. BBQ and Bonfires — Charcoal-Grilled Chiba Ingredients</h2>
+
+<p>BBQ is one of the great pleasures of glamping, and Washin Village delivers. The kitchen team prepares fresh meat and vegetables sourced primarily from Chiba Prefecture. Futtsu's proximity to the sea means excellent seafood is also on the table. Food cooked slowly over charcoal has a flavor that simply can't be matched at home. All cooking equipment and charcoal are provided — just show up and enjoy.</p>
+
+<p>After dinner, it's bonfire time. Washin Village provides firewood free of charge. Gather around the fire, share stories, or simply stare into the flames in silence. It's a luxury that's impossible in the city. In the satoyama stillness, with only the crackle of burning wood breaking the quiet, the stress of daily life simply melts away. Look up, and you'll see a sky full of stars that Tokyo never shows you.</p>
+
+<h2>5. Stay in Kengo Kuma x Snow Peak's "Jyubako" Mobile House</h2>
+
+<p>The Jyubako is a mobile house born from a collaboration between world-renowned architect Kengo Kuma and outdoor brand Snow Peak. At 15 square meters, it features an all-wood interior with a minimalist design philosophy. A large window frames the satoyama landscape, and the unit comes equipped with heating, air conditioning, Wi-Fi, and power outlets for a comfortable stay.</p>
+
+<p>Only a handful of facilities in all of Japan offer the Jyubako as accommodation, making this a must-experience for architecture and design enthusiasts. Rates start at 20,000 yen per night for 2 guests. Spending a night immersed in Kengo Kuma's architectural philosophy is a rare luxury you won't find elsewhere. For more details, see our <a href="/en/blog/kengo-kuma-jyubako/">dedicated Jyubako feature article</a>.</p>
+
+<h2>Sample Weekend Itinerary</h2>
+
+<table>
+  <thead>
+    <tr><th>Time</th><th>Activity</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>13:00</td><td>Depart Tokyo. Take the Aqua-Line to Chiba</td></tr>
+    <tr><td>14:20</td><td>Exit at Futtsu-Chuo IC, 10 minutes to Washin Village</td></tr>
+    <tr><td>15:00</td><td>Check in. Explore the grounds, meet the rescue cats</td></tr>
+    <tr><td>16:00</td><td>Wood-fired sauna session (self-loyly, cold plunge, outdoor rest)</td></tr>
+    <tr><td>17:30</td><td>Start BBQ prep. Grill local Chiba ingredients over charcoal</td></tr>
+    <tr><td>19:00</td><td>Bonfire time. Free firewood. Stargazing</td></tr>
+    <tr><td>21:00</td><td>Sleep in the farmhouse or Jyubako. A cat might join you</td></tr>
+    <tr><td>07:00</td><td>Enjoy a satoyama morning. Walk the grounds, greet the dogs and goats</td></tr>
+    <tr><td>09:00</td><td>Second sauna session. Morning outdoor rest is sublime</td></tr>
+    <tr><td>11:00</td><td>Check out. Consider stopping for fresh seafood in Futtsu on the way back</td></tr>
+    <tr><td>12:30</td><td>Arrive back in Tokyo. Still have the whole afternoon free</td></tr>
+  </tbody>
+</table>
+
+<h2>Glamping Near Tokyo: How Washin Village Compares</h2>
+
+<table>
+  <thead>
+    <tr><th>Facility</th><th>Distance from Tokyo</th><th>Wood-Fired Sauna</th><th>Rescue Cats</th><th>Architect-Designed Room</th><th>Starting Price</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Washin Village (Futtsu)</strong></td><td><strong>~70 min</strong></td><td><strong>Yes (free)</strong></td><td><strong>16 cats</strong></td><td><strong>Kengo Kuma Jyubako</strong></td><td><strong>from 18,000 yen</strong></td></tr>
+    <tr><td>Typical Chiba glamping</td><td>60-90 min</td><td>Varies</td><td>None</td><td>None</td><td>15,000-40,000 yen</td></tr>
+    <tr><td>Yamanashi / Lake Kawaguchi</td><td>90-120 min</td><td>Varies</td><td>None</td><td>None</td><td>20,000-50,000 yen</td></tr>
+    <tr><td>Tochigi / Nasu area</td><td>120-180 min</td><td>Varies</td><td>None</td><td>None</td><td>25,000-60,000 yen</td></tr>
+  </tbody>
+</table>
+
+<p>Washin Village combines exceptional access — just 70 minutes from Tokyo — with three genuinely rare offerings: a wood-fired sauna, 16 rescue cats, and Kengo Kuma's Jyubako. No other glamping facility in the Kanto region brings all three together. That's what makes it ideal for a quick but deeply satisfying weekend getaway.</p>
+
+<h2>Getting There — Via the Tokyo Bay Aqua-Line</h2>
+
+<p>Washin Village is located at 14 Takamizo, Futtsu City, Chiba Prefecture. The fastest route from Tokyo is via the Tokyo Bay Aqua-Line. Take the Shuto Expressway Bayshore Route to the Kawasaki-Ukishima IC, cross the Aqua-Line (passing Umihotaru PA), then take the Tateyama Expressway from Kisarazu JCT and exit at Futtsu-Chuo IC. From there, it's about 10 minutes to the village.</p>
+
+<p>The standard Aqua-Line toll is 3,140 yen for a regular car, but with ETC (electronic toll collection) it drops to just 800 yen — so be sure to bring your ETC card. On weekends, traffic can build up near Umihotaru PA in the afternoon; try to enter the Aqua-Line by around 1:00 PM if possible. If coming by train, the nearest station is Aobori Station on the JR Uchibo Line, and shuttle service from the station can be arranged with advance reservation. Parking at Washin Village is free.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is one night really enough to enjoy everything?</h3>
+<p>Absolutely. Check-in is at 3:00 PM and check-out is at 11:00 AM, giving you roughly 20 hours on-site. That's plenty of time for the sauna, BBQ, bonfire, time with the rescue cats, and a morning walk. Since Washin Village is just 70 minutes from Tokyo, you can leave in the late morning and still have your afternoon free back in the city.</p>
+
+<h3>How do I make a reservation?</h3>
+<p>Reservations are accepted online only via d-reserve.jp. Phone reservations are not available. We recommend booking early for popular weekends and holidays. There are four room types to choose from: Kominka farmhouse (from 25,000 yen), Jyubako mobile house (from 20,000 yen), Nagayamon gate house (from 30,000 yen), and Nordisk tent (from 18,000 yen).</p>
+
+<h3>What if it rains?</h3>
+<p>Washin Village is enjoyable rain or shine. The wood-fired sauna has a roof and operates in all weather. The farmhouse and Jyubako are cozy indoor spaces where the sound of rain only adds to the atmosphere. BBQ can be set up under covered areas, and since many of the rescue cats stay indoors during rain, you may actually get even more cat cuddle time on a rainy day.</p>
+
+<BookingCTA />
+
+<h2>Related Articles</h2>
+<ul>
+  <li><a href="/en/blog/kengo-kuma-jyubako/">Stay in Kengo Kuma x Snow Peak's "Jyubako" — Glamping at Washin Village</a></li>
+  <li><a href="/en/blog/kominka-sauna-chiba/">Wood-Fired Sauna in a 200-Year-Old Farmhouse — Washin Village, Futtsu, Chiba</a></li>
+  <li><a href="/en/blog/neko-glamping-kanto/">The Only Glamping with 16 Rescue Cats in Kanto — Washin Village</a></li>
+</ul>
+
+</BaseLayout>

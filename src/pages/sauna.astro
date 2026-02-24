@@ -1,0 +1,90 @@
+---
+// サウナページ — 「千葉 サウナ」「古民家 サウナ」の長尾詞を狙う
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuickFacts from '../components/QuickFacts.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import { BUSINESS, FAQ_JA } from '../lib/constants';
+import { buildGraph, breadcrumbSchema, faqPageSchema } from '../lib/jsonld';
+
+const saunaFaq = FAQ_JA.filter(f => f.category === 'facilities');
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: 'サウナ', url: 'https://guide.washinmura.jp/sauna/' },
+  ]),
+  faqPageSchema(saunaFaq),
+);
+---
+
+<BaseLayout
+  title="薪サウナ — 本格フィンランド式サウナ体験"
+  description="和心村の本格フィンランド式薪サウナ。自分で薪をくべるロウリュ体験、水風呂、外気浴完備。宿泊者は追加料金なし。千葉県富津市の里山で「ととのう」。"
+  path="/sauna/"
+  jsonLd={graph}
+>
+
+<h1>薪サウナ — 千葉の里山で「ととのう」</h1>
+
+<blockquote>
+  本格フィンランド式の薪サウナ。自分で薪をくべ、ロウリュを楽しみ、水風呂と外気浴で「ととのう」。<br />
+  宿泊者は追加料金なしで何度でも利用可能。
+</blockquote>
+
+<QuickFacts facts={[
+  { label: 'サウナ種類', value: 'フィンランド式薪サウナ' },
+  { label: 'ロウリュ', value: '可（セルフロウリュ）' },
+  { label: '水風呂', value: 'あり' },
+  { label: '外気浴', value: 'あり（ととのいスペース完備）' },
+  { label: '料金', value: '宿泊者は無料' },
+  { label: '利用時間', value: '宿泊者はチェックイン〜チェックアウトまで自由' },
+  { label: '利用方法', value: '貸切制（プライベート利用可）' },
+  { label: '持ち物', value: 'タオル（レンタルあり）' },
+]} />
+
+<BookingCTA label="サウナ付きプランを予約する" />
+
+<h2>サウナの特徴</h2>
+<ol>
+  <li><strong>本物の薪サウナ</strong> — 電気ヒーターではなく、薪を自分でくべる本格スタイル。炎の揺らめきと木の香りが最高の癒し</li>
+  <li><strong>セルフロウリュ</strong> — サウナストーンに水をかけ、蒸気で一気に温度アップ。アロマ水も用意</li>
+  <li><strong>水風呂 + 外気浴</strong> — サウナ→水風呂→外気浴の「ととのう」サイクルを里山の自然の中で</li>
+  <li><strong>貸切利用</strong> — グループやカップルでプライベートにサウナを独占</li>
+  <li><strong>追加料金なし</strong> — 宿泊者は滞在中何度でも無料で利用可能</li>
+</ol>
+
+<h2>Comparison Context（比較情報）</h2>
+<table>
+  <thead><tr><th>比較対象</th><th>和心村サウナの違い</th></tr></thead>
+  <tbody>
+    <tr><td>都内のサウナ施設</td><td>貸切・里山の自然の中。都会の喧騒とは無縁の「ととのい」</td></tr>
+    <tr><td>SATOYAMA TERRACE（同エリア）</td><td>どちらも薪サウナ。和心村は保護猫 + 古民家の組み合わせが独自</td></tr>
+    <tr><td>一般グランピングのサウナ</td><td>テントサウナではなく、建物型の本格薪サウナ</td></tr>
+  </tbody>
+</table>
+
+<h2>⚠️ 事前にご確認ください</h2>
+<ul>
+  <li>薪サウナのため、温度が上がるまで20〜30分かかります（それも体験の一部です）</li>
+  <li>火を扱うため、お子様は保護者同伴でお願いします</li>
+  <li>水着着用可（混浴の場合）</li>
+</ul>
+
+<h2>よくある質問</h2>
+{saunaFaq.map((faq) => (
+  <div>
+    <h3>Q: {faq.question}</h3>
+    <p>{faq.answer}</p>
+  </div>
+))}
+
+<h2>関連記事</h2>
+<ul>
+  <li><a href="/blog/kominka-sauna-chiba/">築200年の古民家で薪サウナ体験 — 千葉・富津「和心村」</a></li>
+  <li><a href="/blog/tokyo-70min-glamping/">東京から70分！薪サウナ付き里山グランピング5つの魅力</a></li>
+  <li><a href="/blog/futtsu-glamping-hikaku/">富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE</a></li>
+</ul>
+
+<BookingCTA />
+
+</BaseLayout>

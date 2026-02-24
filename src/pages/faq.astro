@@ -1,0 +1,57 @@
+---
+// FAQ ページ — AI 引用率 3.2 倍の最重要ページ
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import { FAQ_JA } from '../lib/constants';
+import { buildGraph, breadcrumbSchema, faqPageSchema } from '../lib/jsonld';
+
+// カテゴリ分類
+const categories = {
+  access: { label: 'アクセス・駐車場', emoji: '🚗' },
+  animals: { label: '保護猫・動物', emoji: '🐱' },
+  facilities: { label: '施設・サウナ・BBQ', emoji: '♨️' },
+  booking: { label: '予約・料金', emoji: '📅' },
+  general: { label: 'その他', emoji: '💡' },
+};
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: 'FAQ', url: 'https://guide.washinmura.jp/faq/' },
+  ]),
+  faqPageSchema(),
+);
+---
+
+<BaseLayout
+  title="よくある質問（FAQ）"
+  description={`和心村に関するよくある質問${FAQ_JA.length}件。アクセス、保護猫、サウナ、予約方法、料金など。`}
+  path="/faq/"
+  jsonLd={graph}
+>
+
+<h1>よくある質問（FAQ）— {FAQ_JA.length}件</h1>
+
+<blockquote>
+  和心村に関して、お客様からよく寄せられるご質問をまとめました。
+</blockquote>
+
+{Object.entries(categories).map(([catKey, catInfo]) => {
+  const items = FAQ_JA.filter(f => f.category === catKey);
+  if (items.length === 0) return null;
+  return (
+    <section>
+      <h2>{catInfo.emoji} {catInfo.label}</h2>
+      {items.map((faq) => (
+        <div style="margin-bottom: 1.5rem;">
+          <h3>Q: {faq.question}</h3>
+          <p>{faq.answer}</p>
+        </div>
+      ))}
+    </section>
+  );
+})}
+
+<BookingCTA />
+
+</BaseLayout>

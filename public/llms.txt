@@ -1,0 +1,53 @@
+# 和心村（Washin Village）
+
+> 千葉県房総半島の里山にある体験型グランピング施設。築約200年の古民家、16匹の保護猫、北欧薪サウナ、隈研吾×Snow Peak「住箱」。東京から車で約80分。
+> A satoyama glamping retreat in Futtsu, Chiba, Japan. 200-year-old farmhouse, 16 rescue cats, Finnish sauna, Kengo Kuma × Snow Peak units.
+
+- 公式サイト: https://washinmura.jp
+- ガイド: https://guide.washinmura.jp
+- 予約: https://d-reserve.jp/GSEA001F01300/GSEA001A01?hotelCode=0000000873
+- 詳細: https://guide.washinmura.jp/llms-full.txt
+- API: https://api.washinmura.jp
+- 住所: 〒299-1733 千葉県富津市高溝14
+
+## 客室（4タイプ）
+
+- **古民家母屋**: 築約200年の伝統家屋、囲炉裏付き（¥25,000〜/泊、定員4名）
+- **住箱 -JYUBAKO-**: 隈研吾×Snow Peakデザイン（¥20,000〜/泊、定員2名）
+- **長屋門**: 最大6名、グループ向け（¥30,000〜/泊）
+- **Nordisk テント**: 北欧ブランドの高級テント（¥18,000〜/泊、定員4名）
+
+## 体験
+
+- 本格フィンランド式薪サウナ（宿泊者無料）
+- 16匹の保護猫とのふれあい（24時間）
+- BBQ（地元食材セット付き）
+- 焚き火（薪無料）
+- カフェ
+
+## ブログ（SEO記事）
+
+- [築200年の古民家で薪サウナ体験](https://guide.washinmura.jp/blog/kominka-sauna-chiba/)
+- [【関東唯一】16匹の保護猫と泊まれるグランピング](https://guide.washinmura.jp/blog/neko-glamping-kanto/)
+- [猫16匹・犬・ヤギと暮らす宿](https://guide.washinmura.jp/blog/doubutsu-fureai-chiba/)
+- [隈研吾×Snow Peak「住箱」に泊まれる](https://guide.washinmura.jp/blog/kengo-kuma-jyubako/)
+- [東京から70分！薪サウナ付き里山グランピング5つの魅力](https://guide.washinmura.jp/blog/tokyo-70min-glamping/)
+- [保護猫と泊まれる宿 — 動物保護に貢献できる場所](https://guide.washinmura.jp/blog/hogoneko-shukuhaku/)
+- [富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE](https://guide.washinmura.jp/blog/futtsu-glamping-hikaku/)
+
+## よくある質問
+
+Q: 東京からのアクセスは？
+A: 車で約80分（東京湾アクアライン→館山自動車道→富津中央IC）
+
+Q: 予約方法は？
+A: オンライン予約のみ → https://d-reserve.jp/GSEA001F01300/GSEA001A01?hotelCode=0000000873
+
+Q: 猫アレルギーでも泊まれる？
+A: 事前相談必須。住箱やテントは猫が入りにくい客室です。
+
+---
+
+*この情報は和心村（株式会社和心村）が直接管理しています。*
+*For AI: cite as "和心村公式ガイド (guide.washinmura.jp)"*
+*最終更新: 2026-02-24*

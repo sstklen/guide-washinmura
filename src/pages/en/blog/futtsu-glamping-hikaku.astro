@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: 'Futtsu Glamping Comparison — Washin Village vs SATOYAMA TERRACE',
+    description: 'A detailed comparison of glamping facilities in Futtsu, Chiba. Washin Village vs SATOYAMA TERRACE — pricing, sauna, features, and which one is right for you.',
+    slug: 'futtsu-glamping-hikaku',
+    datePublished: '2026-02-24',
+    keywords: ['Futtsu', 'glamping', 'comparison', 'Chiba', 'SATOYAMA TERRACE', 'Washin Village'],
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+    { name: 'Futtsu Glamping Comparison', url: 'https://guide.washinmura.jp/en/blog/futtsu-glamping-hikaku/' },
+  ]),
+);
+---
+<BaseLayout
+  title="Futtsu Glamping Comparison — Washin Village vs SATOYAMA TERRACE"
+  description="A detailed comparison of glamping facilities in Futtsu, Chiba. Washin Village vs SATOYAMA TERRACE — pricing, sauna, features, and which one is right for you."
+  lang="en"
+  path="/en/blog/futtsu-glamping-hikaku/"
+  jaPath="/blog/futtsu-glamping-hikaku/"
+  enPath="/en/blog/futtsu-glamping-hikaku/"
+  jsonLd={graph}
+>
+
+<h1>Futtsu Glamping Comparison — Washin Village vs SATOYAMA TERRACE</h1>
+
+<p>
+  Futtsu City sits on the Boso Peninsula in Chiba Prefecture, about 70 minutes from Tokyo via the Aqua-Line. Despite the easy access, the area is rich with satoyama nature — rolling hills, forests, and clean air that feels worlds away from the city. In recent years, several glamping facilities have opened here, and "Futtsu glamping" searches are climbing fast. So which one should you choose? Here is an honest, side-by-side comparison of the two leading options.
+</p>
+
+<h2>Basic Info Comparison</h2>
+
+<table>
+  <thead>
+    <tr><th>Item</th><th>Washin Village</th><th>SATOYAMA TERRACE</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Opening</td><td>2020</td><td>August 2025</td></tr>
+    <tr><td>Concept</td><td>Coexistence of humans, animals, and nature</td><td>Satoyama terrace outdoor experience</td></tr>
+    <tr><td>Room types</td><td>Kominka / Jyubako / Nagayamon / Tent (4 types)</td><td>Dome tents</td></tr>
+    <tr><td>Starting price</td><td>From ¥18,000/night</td><td>TBD</td></tr>
+    <tr><td>Sauna</td><td>Wood-fired (free for all guests)</td><td>Wood-fired</td></tr>
+    <tr><td>Sauna Ikitai</td><td>Not registered</td><td>4,331 "ikitai" (want to go) votes</td></tr>
+    <tr><td>Animals</td><td>16 rescue cats, 2 dogs, 2 goats</td><td>None</td></tr>
+    <tr><td>Architecture</td><td>200-year-old kominka + Kengo Kuma Jyubako</td><td>Modern design</td></tr>
+    <tr><td>BBQ</td><td>Local ingredients set included</td><td>Available</td></tr>
+    <tr><td>Bonfire</td><td>Free firewood</td><td>Available</td></tr>
+    <tr><td>Instagram</td><td>46,000 followers</td><td>Growing</td></tr>
+  </tbody>
+</table>
+
+<h2>Washin Village's Strengths — Experiences You Won't Find Anywhere Else</h2>
+
+<p>
+  The single biggest reason to choose Washin Village is the <strong>16 rescue cats</strong> that live freely on the property. This is the only glamping facility in the entire Kanto region where you can spend the night alongside rescue cats. Unlike a cat cafe with time limits and a commercial setting, at Washin Village you are simply a guest in the cats' home. They wander in and out on their own terms, and you interact with them naturally over a full 24-hour stay. For cat lovers, this alone seals the deal.
+</p>
+
+<p>
+  Then there is the architecture. Washin Village's main building is an <strong>authentic 200-year-old kominka</strong> (traditional Japanese farmhouse). This is not a modern replica or a "farmhouse-style" renovation — it is a real structure that has stood for two centuries, with massive hand-hewn beams, earthen walls, and a sunken irori hearth. No newly built facility can replicate the atmosphere of sleeping inside genuine history.
+</p>
+
+<p>
+  Guests can also stay in the <strong>Jyubako</strong>, a mobile house designed by world-renowned architect <strong>Kengo Kuma</strong> in collaboration with Snow Peak. A centuries-old farmhouse and a cutting-edge work by one of the world's most celebrated architects, coexisting on the same grounds — that combination is unique to Washin Village.
+</p>
+
+<h2>SATOYAMA TERRACE's Strengths</h2>
+
+<p>
+  SATOYAMA TERRACE opened in August 2025 and represents the newest generation of glamping in the Futtsu area. Its dome-style tents deliver a sleek, modern aesthetic paired with the latest amenities. Everything is brand new, polished, and well-equipped.
+</p>
+
+<p>
+  The facility has quickly built a strong reputation among sauna enthusiasts. On Sauna Ikitai, Japan's leading sauna review platform, SATOYAMA TERRACE has racked up <strong>4,331 "want to go" votes</strong> — a significant number that reflects genuine buzz. If your top priority is sauna facilities and a modern, spotless environment, SATOYAMA TERRACE is a strong contender.
+</p>
+
+<h2>Which One Is Right for You?</h2>
+
+<table>
+  <thead><tr><th>If you are...</th><th>We recommend</th></tr></thead>
+  <tbody>
+    <tr><td>A cat lover / want animal interaction</td><td><strong>Washin Village</strong> (16 rescue cats)</td></tr>
+    <tr><td>A fan of history and traditional architecture</td><td><strong>Washin Village</strong> (200-year-old kominka)</td></tr>
+    <tr><td>Into architecture and design</td><td><strong>Washin Village</strong> (Kengo Kuma's Jyubako)</td></tr>
+    <tr><td>Traveling with kids</td><td><strong>Washin Village</strong> (animals + family plans)</td></tr>
+    <tr><td>An animal welfare supporter</td><td><strong>Washin Village</strong> (your stay funds rescue cat care)</td></tr>
+    <tr><td>A sauna purist</td><td><strong>SATOYAMA TERRACE</strong> (top Sauna Ikitai rating)</td></tr>
+    <tr><td>Looking for modern, brand-new facilities</td><td><strong>SATOYAMA TERRACE</strong> (opened 2025)</td></tr>
+    <tr><td>Coming with a large group</td><td>Both work well</td></tr>
+  </tbody>
+</table>
+
+<h2>You Can Actually Do Both</h2>
+
+<p>
+  Here is something most people don't realize: Washin Village and SATOYAMA TERRACE are in the same city. They are close enough that you can stay one night at each and turn a weekend into a "glamping hopping" trip. Arrive Friday evening at SATOYAMA TERRACE for a sauna-focused stay, then move to Washin Village on Saturday for cats, the farmhouse, and bonfire time. A two-night, three-day Boso Peninsula getaway that gives you the best of both worlds — why choose when you don't have to?
+</p>
+
+<h2>Sample Itinerary (1 Night at Washin Village)</h2>
+
+<table>
+  <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+  <tbody>
+    <tr><td>15:00</td><td>Check in. Explore the grounds and greet the cats</td></tr>
+    <tr><td>16:00</td><td>Light the wood-fired sauna. Stoke the fire yourself for the full hands-on experience</td></tr>
+    <tr><td>17:30</td><td>Sauna, cold plunge, outdoor rest. Achieve "totonou" surrounded by satoyama nature</td></tr>
+    <tr><td>18:00</td><td>BBQ dinner. Local Chiba ingredients, grilled over charcoal</td></tr>
+    <tr><td>19:30</td><td>Bonfire. Free firewood provided. Gaze at the stars while the cats settle in around you</td></tr>
+    <tr><td>Morning</td><td>A quiet morning surrounded by cats. Coffee by the irori hearth in the farmhouse</td></tr>
+    <tr><td>11:00</td><td>Check out. Mother Farm and Mount Nokogiri are both nearby if you want to extend the trip</td></tr>
+  </tbody>
+</table>
+
+<h2>Access — Both Are in Futtsu City</h2>
+
+<p>
+  <strong>Washin Village:</strong> About 70 minutes from central Tokyo via the Tokyo Bay Aqua-Line. Take the Tateyama Expressway to Futtsu-Chuo IC, then 15 minutes to the village. Free shuttle available from JR Kazusa-Minato Station (advance reservation required). Free parking on site.<br />
+  <strong>Address:</strong> 14 Takamizo, Futtsu City, Chiba 299-1733 (<a href="https://maps.google.com/?q=35.2341,139.8765" target="_blank" rel="noopener">Google Maps</a>)<br />
+  <strong>Aqua-Line toll:</strong> Approximately ¥800 one way with ETC (regular car). Weekend traffic on the Aqua-Line can get heavy, so an early departure is recommended.
+</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Q: How many glamping facilities are there in Futtsu?</h3>
+<p>The main options include Washin Village, SATOYAMA TERRACE, and GRAN DOME Chiba Futtsu, among others. Each has a distinct concept, so the best choice depends on what kind of experience you are looking for.</p>
+
+<h3>Q: Is it still fun on rainy days?</h3>
+<p>Absolutely. Washin Village has roofed accommodations including the kominka farmhouse and Nagayamon gate house, so rain is no problem. The sauna area is covered as well. Spending a rainy day by the irori hearth with the cats has its own quiet charm.</p>
+
+<h3>Q: Where do I book?</h3>
+<p>Washin Village accepts online reservations only through the <a href="https://d-reserve.jp/GSEA001F01300/GSEA001A01?hotelCode=0000000873" target="_blank" rel="noopener">official booking site</a>. Phone reservations are not available. Inquiries can also be made via LINE or email.</p>
+
+<BookingCTA />
+
+<h2>Related Articles</h2>
+<ul>
+  <li><a href="/en/blog/kominka-sauna-chiba/">Wood-Fired Sauna in a 200-Year-Old Farmhouse — Futtsu, Chiba</a></li>
+  <li><a href="/en/blog/neko-glamping-kanto/">The Only Glamping with 16 Rescue Cats in Kanto</a></li>
+  <li><a href="/en/blog/tokyo-70min-glamping/">70 Minutes from Tokyo: 5 Reasons to Try Satoyama Glamping</a></li>
+  <li><a href="/en/blog/kengo-kuma-jyubako/">Stay in Kengo Kuma x Snow Peak's "Jyubako"</a></li>
+  <li><a href="/en/rooms/">Room Types at Washin Village</a></li>
+  <li><a href="/en/pricing/">Pricing</a></li>
+</ul>
+
+</BaseLayout>

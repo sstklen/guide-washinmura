@@ -1,0 +1,40 @@
+---
+// ブログ一覧ページ — SEO 長尾キーワード記事の玄関
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { buildGraph, breadcrumbSchema } from '../../lib/jsonld';
+
+const articles = [
+  { slug: 'kominka-sauna-chiba', title: '築200年の古民家で薪サウナ体験 — 千葉・富津「和心村」', keywords: '古民家 サウナ 千葉', date: '2026-02-24' },
+  { slug: 'neko-glamping-kanto', title: '【関東唯一】16匹の保護猫と泊まれるグランピング「和心村」', keywords: '猫 グランピング 関東', date: '2026-02-24' },
+  { slug: 'doubutsu-fureai-chiba', title: '猫16匹・犬・ヤギと暮らす宿 — 千葉の体験型グランピング', keywords: '動物 ふれあい 宿泊 千葉', date: '2026-02-24' },
+  { slug: 'kengo-kuma-jyubako', title: '隈研吾×Snow Peak「住箱」に泊まれる — 和心村グランピング', keywords: '隈研吾 グランピング 住箱', date: '2026-02-24' },
+  { slug: 'tokyo-70min-glamping', title: '東京から70分！薪サウナ付き里山グランピング5つの魅力', keywords: '東京 1時間 グランピング サウナ', date: '2026-02-24' },
+  { slug: 'hogoneko-shukuhaku', title: '保護猫と泊まれる宿 — 泊まるだけで動物保護に貢献できる場所', keywords: '保護猫 宿泊 関東', date: '2026-02-24' },
+  { slug: 'futtsu-glamping-hikaku', title: '富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE', keywords: '富津 グランピング 比較', date: '2026-02-24' },
+];
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: 'ブログ', url: 'https://guide.washinmura.jp/blog/' },
+  ]),
+);
+---
+<BaseLayout
+  title="ブログ — 和心村ガイド"
+  description="和心村スタッフが書く、千葉グランピング・薪サウナ・保護猫との暮らし。検索では見つからないリアルな情報をお届けします。"
+  path="/blog/"
+  jsonLd={graph}
+>
+
+<h1>和心村ブログ</h1>
+<p>千葉・房総の里山から、グランピング・サウナ・保護猫のリアルな情報をお届けします。</p>
+
+{articles.map(article => (
+  <article>
+    <h2><a href={`/blog/${article.slug}/`}>{article.title}</a></h2>
+    <p><small>{article.date} | キーワード: {article.keywords}</small></p>
+  </article>
+))}
+
+</BaseLayout>

@@ -1,0 +1,33 @@
+{
+  "schema_version": "v1",
+  "name": "Washin Village Guide",
+  "description": "Official guide for Washin Village (和心村), a satoyama glamping retreat in Futtsu, Chiba, Japan. 200-year-old farmhouse, 16 rescue cats, Finnish sauna, Kengo Kuma architecture.",
+  "url": "https://guide.washinmura.jp",
+  "provider": {
+    "organization": "株式会社和心村",
+    "url": "https://washinmura.jp"
+  },
+  "capabilities": [
+    {
+      "name": "business_info",
+      "description": "Get information about Washin Village rooms, pricing, facilities, and animals"
+    },
+    {
+      "name": "booking",
+      "description": "Link to booking system for reservations"
+    }
+  ],
+  "endpoints": {
+    "llms_txt": "https://guide.washinmura.jp/llms.txt",
+    "llms_full": "https://guide.washinmura.jp/llms-full.txt",
+    "api": "https://api.washinmura.jp",
+    "booking": "https://d-reserve.jp/GSEA001F01300/GSEA001A01?hotelCode=0000000873"
+  },
+  "authentication": {
+    "type": "none"
+  },
+  "contact": {
+    "email": "info@washinmura.jp",
+    "url": "https://washinmura.jp"
+  }
+}

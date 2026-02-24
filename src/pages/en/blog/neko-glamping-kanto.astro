@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema, faqPageSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: 'Glamping with 16 Rescue Cats — The Only One in Kanto',
+    description: 'The only glamping facility in the Kanto region where you can stay with 16 rescue cats. Unlike cat cafes, spend 24 hours in the cats\' home. Pricing, access, and booking info.',
+    slug: 'neko-glamping-kanto',
+    datePublished: '2026-02-24',
+    keywords: ['cat glamping', 'rescue cats', 'Kanto', 'cat cafe alternative', 'Chiba', 'accommodation'],
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+    { name: 'Glamping with 16 Rescue Cats', url: 'https://guide.washinmura.jp/en/blog/neko-glamping-kanto/' },
+  ]),
+  faqPageSchema([
+    { question: 'Can I stay if I have cat allergies?', answer: 'Please contact us in advance. The Jyubako and Nordisk tent are standalone units where cats rarely enter, making them a reasonable option for guests with mild allergies. However, cats roam freely throughout the property, so we cannot recommend a stay for those with severe allergies.', category: 'animals' },
+    { question: 'Can I adopt one of the rescue cats?', answer: 'Yes. Washin Village actively seeks adoptive families for its rescue cats. If you bond with a particular cat during your stay, let our staff know and we will explain the adoption requirements and process.', category: 'animals' },
+    { question: 'Can I bring my own pet (cat or dog)?', answer: 'This is handled on a case-by-case basis. Please contact us beforehand so we can consider the well-being of our rescue cats. Dogs must be kept on a leash at all times.', category: 'animals' },
+  ]),
+);
+---
+<BaseLayout
+  title="Glamping with 16 Rescue Cats — The Only One in Kanto | Washin Village"
+  description="The only glamping facility in the Kanto region where you can stay with 16 rescue cats. Unlike cat cafes, spend 24 hours in the cats' home. Pricing, access, and booking info."
+  lang="en"
+  path="/en/blog/neko-glamping-kanto/"
+  jaPath="/blog/neko-glamping-kanto/"
+  enPath="/en/blog/neko-glamping-kanto/"
+  jsonLd={graph}
+>
+
+<h1>Glamping with 16 Rescue Cats — The Only One in Kanto</h1>
+
+<p>
+  Have you ever been at a cat cafe and heard "your session ends in 10 minutes"? If you have ever wished for more time with cats, there is a place in Futtsu, Chiba that was made for you. <strong>Washin Village</strong> is the <strong>only glamping facility in the Kanto region</strong> where you can spend the night alongside <strong>16 free-roaming rescue cats</strong>.
+</p>
+<p>
+  Unlike the pay-by-the-hour model of cat cafes, here you get roughly <strong>20 hours</strong> with the cats — from check-in at 15:00 to check-out at 11:00 the next day. And because this is the cats' home, not a staged attraction, you see them in their most natural, unguarded state.
+</p>
+
+<h2>A "Living with Cats" Experience That No Cafe Can Match</h2>
+
+<p>
+  Cat cafes are enjoyable, but there is always an underlying sense of artifice — a time limit ticking away, and cats that may be weary from entertaining guests all day. Washin Village is the opposite. The cats wander the grounds at will, approaching guests when they feel like it. One might settle in your lap; another might simply watch you from across the garden. You get to enjoy the full spectrum of feline personality — playful, curious, aloof, cuddly — exactly as nature intended.
+</p>
+<p>
+  All 16 cats at Washin Village are rescues. Each one lost its home for different reasons and found a second chance in this satoyama farmhouse. For the cats, interacting with guests is a form of positive socialization that improves their chances of finding a forever family. In other words, <strong>simply by staying here, you are supporting animal rescue</strong>. A portion of every booking goes directly toward the cats' medical care and food.
+</p>
+<p>
+  At night, do not be surprised if a cat curls up next to your futon. In the morning, you wake on the cats' schedule and share the sunrise from the engawa (veranda). For anyone who truly loves cats, there is no greater luxury.
+</p>
+
+<h2>More Than Cats — The Full Washin Village Glamping Experience</h2>
+
+<p>
+  <strong>Sleep in a 200-year-old kominka</strong><br />
+  The main accommodation is a genuine 200-year-old Japanese farmhouse (kominka). Massive beams, earthen walls, and a sunken hearth — it is a living piece of history, and the cats call it home too. Other room options include the <strong>Jyubako</strong>, a minimalist wooden mobile house designed by architect Kengo Kuma in collaboration with Snow Peak; a traditional <strong>Nagayamon</strong> gate house; and <strong>Nordisk glamping tents</strong>.
+</p>
+<p>
+  <strong>Authentic Finnish wood-fired sauna — free for guests</strong><br />
+  After your cat time, step into a real wood-fired sauna for the full <em>totonou</em> (loosely, "reaching perfect equilibrium") experience. Self-service <em>loyly</em> (pouring water on hot stones), a cold-plunge tub, and open-air relaxation in the satoyama breeze — all included at no extra cost. Cats and sauna in one trip: only at Washin Village.
+</p>
+<p>
+  <strong>BBQ, bonfire, and nature</strong><br />
+  Grill fresh Chiba produce under the stars. Enjoy a bonfire with free firewood. The rescue cats may wander over, drawn by the aroma (rest assured, human food is never shared with the animals). For cat lovers, having a cat settle on your lap by the bonfire is the stuff of dreams — and here, it actually happens.
+</p>
+<p>
+  <strong>Dogs and goats, too</strong><br />
+  Washin Village is also home to 2 dogs and 2 goats. Animal lovers of every persuasion will find something to enjoy.
+</p>
+
+<h2>How to Spend Your Time — A Cat Lover's 1-Night Itinerary</h2>
+
+<table>
+  <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+  <tbody>
+    <tr><td>15:00</td><td>Check in. The cats greet you on arrival. Stroll the grounds and start learning all 16 names</td></tr>
+    <tr><td>15:30</td><td>Relax on the kominka's engawa (veranda) with the cats. Find your favorite</td></tr>
+    <tr><td>16:30</td><td>Head to the wood-fired sauna. After cat therapy, it is time for totonou</td></tr>
+    <tr><td>17:30</td><td>Start prepping the BBQ. Watch the cats gather as the smell fills the air</td></tr>
+    <tr><td>18:00</td><td>Starlit BBQ dinner. A cat may curl up at your feet</td></tr>
+    <tr><td>20:00</td><td>Bonfire time. Free firewood. A cat on your lap and flames in front of you</td></tr>
+    <tr><td>21:00</td><td>Back to the kominka — the cats are winding down too. A lucky few get a feline sleep companion</td></tr>
+    <tr><td>07:00</td><td>Wake up on cat time. Watch the cats' morning feeding routine</td></tr>
+    <tr><td>08:00</td><td>Morning walk through the satoyama. Say hello to the dogs and goats</td></tr>
+    <tr><td>09:00</td><td>Coffee at the cafe. Cats lounge by the window as you sip</td></tr>
+    <tr><td>10:30</td><td>Final cat time. Say goodbye to your favorite with a promise to return</td></tr>
+    <tr><td>11:00</td><td>Check out</td></tr>
+  </tbody>
+</table>
+
+<h2>Comparison — Washin Village vs. Cat Cafes vs. Cat-Friendly Inns</h2>
+
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Washin Village</th><th>Cat Cafes</th><th>Inns / Pensions with Cats</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Number of cats</td><td>16 (all rescues)</td><td>10-30 typically</td><td>A few to ~10</td></tr>
+    <tr><td>Interaction time</td><td>~20 hours (15:00 to 11:00)</td><td>30 min - 2 hours</td><td>Common areas only</td></tr>
+    <tr><td>Overnight stay</td><td>Yes (kominka, Jyubako, tent, etc.)</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Where cats roam</td><td>Entire property (indoors & outdoors)</td><td>Cafe interior only</td><td>Lobby / common areas</td></tr>
+    <tr><td>Cat behavior</td><td>Fully natural, free-roaming</td><td>May be over-socialized</td><td>Kept as house cats</td></tr>
+    <tr><td>Sauna</td><td>Wood-fired sauna (free for guests)</td><td>None</td><td>None</td></tr>
+    <tr><td>Pricing</td><td>From ¥25,000/building (cats + sauna included)</td><td>¥1,000-2,000/hour</td><td>¥10,000-20,000/night</td></tr>
+    <tr><td>Animal rescue impact</td><td>Booking fees directly fund rescue operations</td><td>Some rescue cafes only</td><td>Generally none</td></tr>
+    <tr><td>Adoption possible</td><td>Yes</td><td>Yes (at rescue cafes)</td><td>No</td></tr>
+  </tbody>
+</table>
+
+<p>
+  While several places in the Kanto region let you "stay near cats," Washin Village is the only one where <strong>16 rescue cats roam an entire glamping property</strong> and interact with guests around the clock. Add in the wood-fired sauna, BBQ, and bonfire, and even travel companions who are not die-hard cat fans will have a great time.
+</p>
+
+<h2>Access</h2>
+
+<p>
+  <strong>Washin Village</strong>: 14 Takamizo, Futtsu, Chiba<br />
+  <strong>About 70-80 minutes from Tokyo by car</strong> (via the Tokyo Bay Aqua-Line). Take the Aqua-Line from Kawasaki-Ukishima IC, then the Tateyama Expressway to Futtsu-Chuo IC. The village is about 15 minutes from the interchange.<br />
+  Enter "14 Takamizo, Futtsu, Chiba" into your car navigation. Free parking on site.<br />
+  <strong>By train:</strong> JR Uchibo Line to Aobori Station, then a 15-minute taxi ride. Shuttle service available by advance reservation.<br />
+  Bookings are accepted online only via <strong>d-reserve.jp</strong>.
+</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<details>
+  <summary><strong>Q. Can I stay if I have cat allergies?</strong></summary>
+  <p>Please contact us in advance. The Jyubako and Nordisk tent are standalone units where cats rarely enter, making them a reasonable option for guests with mild allergies. However, cats roam freely throughout the property, so we cannot recommend a stay for those with severe allergies.</p>
+</details>
+
+<details>
+  <summary><strong>Q. Can I adopt one of the rescue cats?</strong></summary>
+  <p>Yes. Washin Village actively seeks adoptive families for its rescue cats. If you bond with a particular cat during your stay, let our staff know and we will explain the adoption requirements and process.</p>
+</details>
+
+<details>
+  <summary><strong>Q. Can I bring my own pet (cat or dog)?</strong></summary>
+  <p>This is handled on a case-by-case basis. Please contact us beforehand so we can consider the well-being of our rescue cats. Dogs must be kept on a leash at all times.</p>
+</details>
+
+<BookingCTA label="Book a plan to stay with rescue cats" />
+
+<h2>Related Articles</h2>
+<ul>
+  <li><a href="/en/cats/">Washin Village Rescue Cats — Life with 16 Cats</a></li>
+  <li><a href="/en/blog/kominka-sauna-chiba/">Wood-Fired Sauna in a 200-Year-Old Kominka — Futtsu, Chiba</a></li>
+  <li><a href="/en/blog/doubutsu-fureai-chiba/">Stay with 16 Cats, Dogs & Goats — Animal Glamping in Chiba</a></li>
+  <li><a href="/en/rooms/">Rooms — Kominka, Jyubako, Nagayamon, Tent</a></li>
+  <li><a href="/en/experience/">Experiences — BBQ, Bonfire & Cafe</a></li>
+  <li><a href="/en/pricing/">Pricing</a></li>
+</ul>
+
+</BaseLayout>

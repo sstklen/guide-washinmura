@@ -1,0 +1,147 @@
+---
+// Blog #7: 富津 グランピング 比較 — 和心村 vs SATOYAMA TERRACE
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: '富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE',
+    description: '千葉県富津市の人気グランピング施設を徹底比較。和心村とSATOYAMA TERRACEの違い、料金、サウナ、特徴を詳しく解説。あなたに合う施設が分かります。',
+    slug: 'futtsu-glamping-hikaku',
+    datePublished: '2026-02-24',
+    keywords: ['富津', 'グランピング', '比較', '千葉', 'SATOYAMA TERRACE', '和心村'],
+  }),
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: 'ブログ', url: 'https://guide.washinmura.jp/blog/' },
+    { name: '富津グランピング比較', url: 'https://guide.washinmura.jp/blog/futtsu-glamping-hikaku/' },
+  ]),
+);
+---
+<BaseLayout
+  title="富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE"
+  description="千葉県富津市の人気グランピング施設を徹底比較。和心村とSATOYAMA TERRACEの違い、料金、サウナ、特徴を詳しく解説。"
+  path="/blog/futtsu-glamping-hikaku/"
+  jsonLd={graph}
+>
+
+<h1>富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE</h1>
+
+<p>
+  千葉県富津市は、東京から東京湾アクアライン経由で約70分という好立地ながら、豊かな里山の自然が残るエリアです。近年、このエリアにグランピング施設が続々とオープンし、「富津 グランピング」で検索する人が増えています。今回は富津を代表する2つの施設を、実際の情報をもとに徹底比較します。
+</p>
+
+<h2>基本情報の比較</h2>
+
+<table>
+  <thead>
+    <tr><th>項目</th><th>和心村</th><th>SATOYAMA TERRACE</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>開業</td><td>2020年</td><td>2025年8月</td></tr>
+    <tr><td>コンセプト</td><td>人と動物と自然の共生</td><td>里山テラスでのアウトドア体験</td></tr>
+    <tr><td>客室タイプ</td><td>古民家・住箱・長屋門・テント（4タイプ）</td><td>ドーム型テント中心</td></tr>
+    <tr><td>最低料金</td><td>¥18,000〜/泊</td><td>要確認</td></tr>
+    <tr><td>サウナ</td><td>本格薪サウナ（宿泊者無料）</td><td>薪サウナあり</td></tr>
+    <tr><td>サウナイキタイ</td><td>未登録</td><td>4,331いきたい</td></tr>
+    <tr><td>動物</td><td>保護猫16匹・犬2匹・ヤギ2頭</td><td>なし</td></tr>
+    <tr><td>建築的特徴</td><td>築200年古民家 + 隈研吾「住箱」</td><td>モダン設計</td></tr>
+    <tr><td>BBQ</td><td>地元食材セット付き</td><td>あり</td></tr>
+    <tr><td>焚き火</td><td>薪無料</td><td>あり</td></tr>
+    <tr><td>Instagram</td><td>46,000フォロワー</td><td>成長中</td></tr>
+  </tbody>
+</table>
+
+<h2>和心村の強み — 「ここにしかない」体験</h2>
+
+<p>
+  和心村の最大の特徴は、<strong>保護猫16匹と一緒に過ごせる</strong>こと。これは関東のグランピング施設で唯一の体験です。猫カフェのような時間制限はなく、24時間、猫たちの「家」にお邪魔する形で自然に触れ合えます。猫好きなら、この一点だけで和心村を選ぶ理由になるでしょう。
+</p>
+
+<p>
+  もう一つの大きな特徴は、<strong>築約200年の本物の古民家</strong>に泊まれること。これは「古民家風」のリノベーションではなく、実際に200年の歴史を刻んだ建物です。囲炉裏を囲み、太い梁を見上げながら過ごす時間は、新しい施設では絶対に再現できません。
+</p>
+
+<p>
+  さらに、世界的建築家・<strong>隈研吾氏がデザインしたSnow Peakとのコラボ「住箱」</strong>にも宿泊可能。築200年の古民家と世界的建築家のモダンデザインが同じ敷地に共存するのは、和心村ならではの風景です。
+</p>
+
+<h2>SATOYAMA TERRACEの強み</h2>
+
+<p>
+  SATOYAMA TERRACEは2025年8月にオープンした新しい施設です。最新設備のドーム型テントを中心としたモダンなグランピング体験が特徴。サウナイキタイでの人気も高く、「いきたい」票が4,331と注目を集めています。新しい施設ならではの清潔感と設備の充実度が魅力です。
+</p>
+
+<p>
+  サウナ体験を最重視する方、最新設備のグランピングを楽しみたい方にはSATOYAMA TERRACEが合っているかもしれません。
+</p>
+
+<h2>あなたに合うのはどっち？</h2>
+
+<table>
+  <thead><tr><th>こんな人は</th><th>おすすめ</th></tr></thead>
+  <tbody>
+    <tr><td>猫が好き・動物と触れ合いたい</td><td><strong>和心村</strong>（16匹の保護猫）</td></tr>
+    <tr><td>古民家・歴史ある建物が好き</td><td><strong>和心村</strong>（築200年の本物）</td></tr>
+    <tr><td>建築・デザインに興味がある</td><td><strong>和心村</strong>（隈研吾「住箱」）</td></tr>
+    <tr><td>子連れファミリー</td><td><strong>和心村</strong>（動物体験 + 家族プラン）</td></tr>
+    <tr><td>動物保護に関心がある</td><td><strong>和心村</strong>（宿泊が保護活動の支援に）</td></tr>
+    <tr><td>サウナ重視（施設・設備にこだわる）</td><td>SATOYAMA TERRACE</td></tr>
+    <tr><td>最新設備・モダンな空間が好き</td><td>SATOYAMA TERRACE</td></tr>
+    <tr><td>大人数グループ</td><td>どちらも対応可能</td></tr>
+  </tbody>
+</table>
+
+<h2>実は「はしご」もできる</h2>
+
+<p>
+  和心村とSATOYAMA TERRACEは同じ富津市内にあるため、1泊ずつ両方を体験する「はしごグランピング」も可能です。金曜夜にSATOYAMA TERRACEでサウナを満喫し、土曜は和心村で猫と古民家を楽しむ——そんな2泊3日の房総旅行もおすすめです。
+</p>
+
+<h2>和心村での過ごし方（1泊2日モデルプラン）</h2>
+
+<table>
+  <tbody>
+    <tr><th>15:00</th><td>チェックイン。村を散策、猫たちにご挨拶</td></tr>
+    <tr><th>16:00</th><td>薪サウナに火入れ。自分で薪をくべるのも体験</td></tr>
+    <tr><th>17:30</th><td>サウナ→水風呂→外気浴。里山で「ととのう」</td></tr>
+    <tr><th>18:00</th><td>BBQ開始。千葉の地元食材で乾杯</td></tr>
+    <tr><th>19:30</th><td>焚き火。薪は無料。星空を眺めながら</td></tr>
+    <tr><th>翌朝</th><td>猫に囲まれる静かな朝。古民家の囲炉裏でコーヒー</td></tr>
+    <tr><th>11:00</th><td>チェックアウト。帰りにマザー牧場や鋸山も近い</td></tr>
+  </tbody>
+</table>
+
+<h2>アクセス（どちらも富津市）</h2>
+
+<p>
+  <strong>和心村:</strong> 東京から東京湾アクアライン経由で約70分。富津中央ICから15分。JR上総湊駅から無料送迎あり。<br />
+  <strong>住所:</strong> 〒299-1733 千葉県富津市高溝14（<a href="https://maps.google.com/?q=35.2341,139.8765" target="_blank" rel="noopener">Google Maps</a>）<br />
+  <strong>アクアライン料金:</strong> ETC利用で片道約800円（普通車）。土日のアクアラインは渋滞しやすいので、早めの出発がおすすめです。
+</p>
+
+<h2>よくある質問</h2>
+
+<h3>Q: 富津市にはグランピング施設がいくつありますか？</h3>
+<p>主要な施設として和心村、SATOYAMA TERRACE、GRAN DOME（グランドーム千葉富津）などがあります。それぞれコンセプトが異なるので、自分の好みに合った施設を選ぶのがポイントです。</p>
+
+<h3>Q: 雨の日でも楽しめますか？</h3>
+<p>和心村は古民家や長屋門など屋根付きの客室があるため、雨天でも快適に過ごせます。サウナも屋根付きです。囲炉裏を囲んで猫と過ごす雨の日も風情があります。</p>
+
+<h3>Q: 予約はどこからできますか？</h3>
+<p>和心村はオンライン予約のみ（<a href="https://d-reserve.jp/GSEA001F01300/GSEA001A01?hotelCode=0000000873" target="_blank" rel="noopener">公式予約サイト</a>）。電話予約は受け付けていません。LINE・メールでの問い合わせも可能です。</p>
+
+<BookingCTA />
+
+<h2>関連記事</h2>
+<ul>
+  <li><a href="/blog/kominka-sauna-chiba/">築200年の古民家で薪サウナ体験</a></li>
+  <li><a href="/blog/neko-glamping-kanto/">【関東唯一】16匹の保護猫と泊まれるグランピング</a></li>
+  <li><a href="/blog/tokyo-70min-glamping/">東京から70分！里山グランピング5つの魅力</a></li>
+  <li><a href="/blog/kengo-kuma-jyubako/">隈研吾×Snow Peak「住箱」に泊まれる</a></li>
+  <li><a href="/rooms/">和心村の客室一覧</a></li>
+  <li><a href="/pricing/">料金について</a></li>
+</ul>
+
+</BaseLayout>

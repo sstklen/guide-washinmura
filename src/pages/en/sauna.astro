@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Sauna', url: 'https://guide.washinmura.jp/en/sauna/' },
+  ]),
+);
+---
+<BaseLayout
+  title="Finnish Wood-Fired Sauna — Washin Village"
+  description="Authentic Finnish wood-fired sauna at Washin Village. Self-service löyly, cold plunge pool, outdoor relaxation area. Free for all overnight guests. Chiba Prefecture, 80 min from Tokyo."
+  lang="en"
+  path="/en/sauna/"
+  jaPath="/sauna/"
+  enPath="/en/sauna/"
+  jsonLd={graph}
+>
+
+<h1>Finnish Wood-Fired Sauna</h1>
+
+<blockquote>
+  A real wood-fired sauna in the heart of the Boso Peninsula satoyama. Stoke the fire yourself, pour water on the stones for löyly, plunge into cold water, then relax in the open air surrounded by forest. Free for all overnight guests.
+</blockquote>
+
+<h2>The Sauna Experience</h2>
+<ol>
+  <li><strong>Heat</strong> — Wood-fired sauna, self-service löyly (steam). Feel the intense, natural heat from real firewood.</li>
+  <li><strong>Cool</strong> — Cold plunge pool to refresh your body instantly.</li>
+  <li><strong>Rest</strong> — Outdoor relaxation area ("ととのいスペース") surrounded by satoyama nature. This is where the magic happens.</li>
+</ol>
+
+<h2>Details</h2>
+<table>
+  <tbody>
+    <tr><th>Type</th><td>Authentic Finnish wood-fired sauna</td></tr>
+    <tr><th>Löyly</th><td>Self-service (pour water on heated stones)</td></tr>
+    <tr><th>Cold Plunge</th><td>Available</td></tr>
+    <tr><th>Outdoor Rest</th><td>Forest-surrounded relaxation area</td></tr>
+    <tr><th>Usage</th><td>Private reservation (per group)</td></tr>
+    <tr><th>Price</th><td>Free for overnight guests</td></tr>
+  </tbody>
+</table>
+
+<h2>What Makes This Sauna Special</h2>
+<ul>
+  <li><strong>Real firewood, not electric</strong> — The heat quality is completely different from electric saunas</li>
+  <li><strong>You control the experience</strong> — Stoke the fire, adjust the löyly to your preference</li>
+  <li><strong>Nature setting</strong> — Surrounded by the satoyama forest of the Boso Peninsula</li>
+  <li><strong>Private use</strong> — Reserved per group, never shared with strangers</li>
+  <li><strong>Combined with 200-year-old farmhouse stay</strong> — A combination you won't find elsewhere</li>
+</ul>
+
+<BookingCTA />
+</BaseLayout>

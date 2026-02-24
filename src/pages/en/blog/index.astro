@@ -1,0 +1,43 @@
+---
+// English Blog index page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { buildGraph, breadcrumbSchema } from '../../../lib/jsonld';
+
+const articles = [
+  { slug: 'kominka-sauna-chiba', title: 'Wood-Fired Sauna in a 200-Year-Old Kominka — Futtsu, Chiba', keywords: 'kominka, sauna, Chiba', date: '2026-02-24' },
+  { slug: 'neko-glamping-kanto', title: 'Glamping with 16 Rescue Cats — The Only One in Kanto', keywords: 'cat glamping, rescue cats, Kanto', date: '2026-02-24' },
+  { slug: 'doubutsu-fureai-chiba', title: 'Stay with 16 Cats, Dogs & Goats — Animal Glamping in Chiba', keywords: 'animal encounter, Chiba, family glamping', date: '2026-02-24' },
+  { slug: 'kengo-kuma-jyubako', title: 'Stay in Kengo Kuma × Snow Peak "Jyubako" — Washin Village', keywords: 'Kengo Kuma, Jyubako, architecture glamping', date: '2026-02-24' },
+  { slug: 'tokyo-70min-glamping', title: '70 Minutes from Tokyo: 5 Reasons to Try Satoyama Glamping', keywords: 'Tokyo glamping, sauna, weekend getaway', date: '2026-02-24' },
+  { slug: 'hogoneko-shukuhaku', title: 'Stay with Rescue Cats — Your Trip Supports Animal Welfare', keywords: 'rescue cats, animal welfare, stay', date: '2026-02-24' },
+  { slug: 'futtsu-glamping-hikaku', title: 'Futtsu Glamping Comparison — Washin Village vs SATOYAMA TERRACE', keywords: 'Futtsu, glamping comparison', date: '2026-02-24' },
+];
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+  ]),
+);
+---
+<BaseLayout
+  title="Blog — Washin Village Guide"
+  description="Stories from the satoyama: glamping, wood-fired sauna, and life with 16 rescue cats. Real information you won't find in a search engine."
+  lang="en"
+  path="/en/blog/"
+  jaPath="/blog/"
+  enPath="/en/blog/"
+  jsonLd={graph}
+>
+
+<h1>Washin Village Blog</h1>
+<p>Stories from the Boso Peninsula satoyama — glamping, sauna, and rescue cats.</p>
+
+{articles.map(article => (
+  <article>
+    <h2><a href={`/en/blog/${article.slug}/`}>{article.title}</a></h2>
+    <p><small>{article.date} | Keywords: {article.keywords}</small></p>
+  </article>
+))}
+
+</BaseLayout>

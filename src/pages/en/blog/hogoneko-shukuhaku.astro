@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: 'Stay with Rescue Cats — Your Trip Supports Animal Welfare',
+    description: 'Stay at Washin Village where 16 rescue cats live freely. Your overnight stay directly supports animal welfare. A new form of travel in Kanto.',
+    slug: 'hogoneko-shukuhaku',
+    datePublished: '2026-02-24',
+    keywords: ['rescue cats', 'animal welfare', 'accommodation', 'Kanto', 'glamping', 'Chiba'],
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+    { name: 'Stay with Rescue Cats', url: 'https://guide.washinmura.jp/en/blog/hogoneko-shukuhaku/' },
+  ]),
+);
+---
+<BaseLayout
+  title="Stay with Rescue Cats — Your Trip Supports Animal Welfare"
+  description="Stay at Washin Village where 16 rescue cats live freely. Your overnight stay directly supports animal welfare. A new form of travel in Kanto."
+  lang="en"
+  path="/en/blog/hogoneko-shukuhaku/"
+  jaPath="/blog/hogoneko-shukuhaku/"
+  enPath="/en/blog/hogoneko-shukuhaku/"
+  jsonLd={graph}
+>
+
+<h1>Stay with Rescue Cats — Your Trip Supports Animal Welfare</h1>
+
+<p>
+  What if your vacation could also help rescue animals? At Washin Village, a glamping retreat tucked into the satoyama hills of Futtsu City, Chiba, 16 rescue cats roam freely across the property. Simply by staying the night, you are directly supporting their care. No fundraising pages, no guilt trips — just a genuinely wonderful travel experience that happens to make a real difference.
+</p>
+
+<h2>How Your Stay Becomes "Animal Welfare"</h2>
+
+<p>
+  All 16 cats at Washin Village are rescues. Some were pulled from overcrowded shelters, others saved from hoarding situations, and a few were once strays with nowhere to go. Today, every one of them lives safely and freely in this satoyama village.
+</p>
+
+<p>
+  A portion of every accommodation fee goes directly toward the cats' medical care, daily food, and facility maintenance. The equation is simple: the more guests who stay, the more stable and comfortable the cats' lives become. Unlike a one-time donation to a shelter, staying here gives you an incredible experience in return — 24 hours with the cats, a wood-fired sauna, BBQ under the stars, and a bonfire to end the night. Your enjoyment funds their well-being. Washin Village calls this "coexistence tourism," and once you experience it, traditional travel feels a little less meaningful.
+</p>
+
+<h2>Fundamentally Different from a Cat Cafe</h2>
+
+<p>
+  A cat cafe is a place you go to see cats. There is a time limit, the cats are there as part of a business, and you leave when your slot is up. Washin Village flips this entirely: the village is the cats' home, and you are a guest in it. The cats act on their own free will. They may wander into your room at midnight, curl up on your lap by the bonfire, or ignore you completely and nap in a sunbeam. The interaction is organic, unhurried, and completely genuine.
+</p>
+
+<table>
+  <thead><tr><th>Comparison</th><th>Cat Cafe</th><th>Washin Village</th></tr></thead>
+  <tbody>
+    <tr><td>Interaction time</td><td>30-60 minutes</td><td>24 hours (overnight stay)</td></tr>
+    <tr><td>Environment</td><td>Commercial indoor space</td><td>Natural satoyama village</td></tr>
+    <tr><td>Cat freedom</td><td>Limited to a designated area</td><td>Free to roam the entire property</td></tr>
+    <tr><td>Overnight stay</td><td>Not available</td><td>4 room types available</td></tr>
+    <tr><td>Welfare contribution</td><td>Indirect at best</td><td>Direct — fees fund cat care</td></tr>
+    <tr><td>Other experiences</td><td>Drinks, maybe snacks</td><td>Sauna, BBQ, bonfire, satoyama walks</td></tr>
+  </tbody>
+</table>
+
+<h2>16 Unique Rescue Cats — Each with Their Own Story</h2>
+
+<p>
+  Every cat at Washin Village has a past. Some were rescued from shelters that had run out of space. Others were saved from hoarding situations where dozens of cats lived in a single home. A few were strays, surviving on the streets before being brought here. Their backgrounds are different, but they share the same present: a safe, free life in the satoyama countryside.
+</p>
+
+<p>
+  Some cats are outgoing and affectionate — the kind that will hop onto your lap the moment you sit down. Others are independent and reserved, observing you from a distance until they decide you are trustworthy. How many you befriend during your stay is entirely up to you and them. That unpredictability is part of the charm.
+</p>
+
+<p>
+  The cats are not the only residents. Two dogs and two goats also call Washin Village home. Humans and animals coexisting naturally in a rural Japanese landscape — it is a scene that feels like it should be ordinary, yet is remarkably rare in modern Japan.
+</p>
+
+<h2>Who Is This Experience For?</h2>
+
+<ul>
+  <li><strong>Animal welfare supporters</strong> — Go beyond donations. Experience life alongside rescue cats and see your money at work firsthand.</li>
+  <li><strong>People who want a cat but can't keep one</strong> — If your apartment, work schedule, or family situation doesn't allow a pet, Washin Village offers a "temporary life with cats" that satisfies the longing.</li>
+  <li><strong>Parents who want to teach kids about animal lives</strong> — Spending time with rescue animals communicates compassion and responsibility more powerfully than any textbook.</li>
+  <li><strong>Anyone who wants more than a cat cafe</strong> — No time limits. No commercial setting. Just real, unscripted coexistence in nature.</li>
+</ul>
+
+<h2>Sample Itinerary</h2>
+
+<table>
+  <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+  <tbody>
+    <tr><td>15:00</td><td>Check in. Wander the grounds and say hello to the cats</td></tr>
+    <tr><td>16:00</td><td>Light the wood-fired sauna. A curious cat may come to supervise the process</td></tr>
+    <tr><td>17:00</td><td>Sauna, cold plunge, outdoor rest. Achieve "totonou" (deep relaxation) in the satoyama air</td></tr>
+    <tr><td>18:00</td><td>BBQ dinner with local Chiba ingredients, grilled over charcoal</td></tr>
+    <tr><td>19:30</td><td>Bonfire time. Free firewood. A cat might curl up on your lap by the fire</td></tr>
+    <tr><td>21:00</td><td>Relax in your room. The nocturnal cats become active and playful after dark</td></tr>
+    <tr><td>07:00</td><td>Wake up to cats. Step outside and breathe in the quiet morning air of the satoyama</td></tr>
+    <tr><td>09:00</td><td>Coffee at the on-site cafe, watching the cats go about their morning routines</td></tr>
+    <tr><td>11:00</td><td>Check out. Saying goodbye to the cats is, honestly, the hardest part</td></tr>
+  </tbody>
+</table>
+
+<h2>Access</h2>
+
+<p>
+  <strong>By car:</strong> About 70-80 minutes from central Tokyo via the Tokyo Bay Aqua-Line. Take the Tateyama Expressway to Futtsu-Chuo IC, then 15 minutes to the village. Free parking on site.<br />
+  <strong>By train:</strong> JR Uchibo Line to Kazusa-Minato Station, then a free shuttle (reservation required). The ride from the station takes about 15 minutes.<br />
+  <strong>Address:</strong> 14 Takamizo, Futtsu City, Chiba 299-1733 (<a href="https://maps.google.com/?q=35.2341,139.8765" target="_blank" rel="noopener">Google Maps</a>)
+</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Q: Can I stay if I have cat allergies?</h3>
+<p>Since 16 cats roam freely across the entire property, Washin Village is not recommended for guests with severe allergies. If your allergy is mild, the Jyubako mobile house or Nordisk tent are good options — cats rarely enter these spaces. Please contact us in advance to discuss your situation.</p>
+
+<h3>Q: Do you do cat adoptions?</h3>
+<p>The cats at Washin Village are permanent residents. They will live here for the rest of their lives, and the village does not operate as an adoption center. For the latest information on any future adoption-related events, please check the official Instagram.</p>
+
+<h3>Q: How much does it cost?</h3>
+<p>Rates start at <strong>¥18,000 per night</strong> (Nordisk tent). The Kominka farmhouse starts at ¥25,000, the Jyubako mobile house at ¥20,000, and the Nagayamon gate house at ¥30,000. Sauna and BBQ are included in all plans. See the <a href="/en/pricing/">pricing page</a> for full details.</p>
+
+<BookingCTA />
+
+<h2>Related Articles</h2>
+<ul>
+  <li><a href="/en/blog/neko-glamping-kanto/">The Only Glamping with 16 Rescue Cats in Kanto</a></li>
+  <li><a href="/en/blog/doubutsu-fureai-chiba/">16 Cats, Dogs & Goats — Hands-On Glamping in Chiba</a></li>
+  <li><a href="/en/cats/">About the Rescue Cats at Washin Village</a></li>
+  <li><a href="/en/blog/tokyo-70min-glamping/">70 Minutes from Tokyo: 5 Reasons to Try Satoyama Glamping</a></li>
+</ul>
+
+</BaseLayout>

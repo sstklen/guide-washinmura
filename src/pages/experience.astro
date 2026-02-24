@@ -1,0 +1,77 @@
+---
+// 体験ページ — BBQ、焚き火、カフェなど
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import { buildGraph, breadcrumbSchema } from '../lib/jsonld';
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: '体験', url: 'https://guide.washinmura.jp/experience/' },
+  ]),
+);
+---
+
+<BaseLayout
+  title="体験 — BBQ・焚き火・カフェ"
+  description="和心村で楽しめる体験。地元食材BBQ、満天の星空焚き火、里山カフェ。サウナと組み合わせて最高の1日を。"
+  path="/experience/"
+  jsonLd={graph}
+>
+
+<h1>体験 — 里山でしかできないこと</h1>
+
+<blockquote>
+  グランピングは「泊まる」だけじゃない。BBQ、焚き火、カフェ、サウナ——五感すべてで里山を体験。
+</blockquote>
+
+<h2>🔥 BBQ（バーベキュー）</h2>
+<ul>
+  <li>宿泊プランにBBQセットが含まれています</li>
+  <li>日帰りBBQプランもあり</li>
+  <li>地元千葉県産の新鮮な食材を中心にご用意</li>
+  <li>BBQグリル・炭・着火剤・食器は全て完備</li>
+</ul>
+
+<h2>🏕️ 焚き火</h2>
+<ul>
+  <li>満天の星空の下で焚き火体験</li>
+  <li>焚き火台・薪は無料でご利用いただけます</li>
+  <li>マシュマロ焼きセットもご用意可能</li>
+  <li>焚き火を囲みながらの語らいは、和心村の夜のハイライト</li>
+</ul>
+
+<h2>☕ カフェ</h2>
+<ul>
+  <li>里山の景色を眺めながらドリンク</li>
+  <li>コーヒー、紅茶、ソフトドリンクをご用意</li>
+  <li>保護猫たちがそばでくつろいでいることも</li>
+</ul>
+
+<h2>おすすめの過ごし方（1泊2日）</h2>
+<table>
+  <thead><tr><th>時間</th><th>過ごし方</th></tr></thead>
+  <tbody>
+    <tr><td>15:00</td><td>チェックイン、客室で一息</td></tr>
+    <tr><td>15:30</td><td>村内散策、保護猫と触れ合い</td></tr>
+    <tr><td>16:00</td><td>薪サウナ（自分で火起こし → ロウリュ → 水風呂 → ととのう）</td></tr>
+    <tr><td>17:30</td><td>BBQ準備（食材セットは用意されています）</td></tr>
+    <tr><td>18:00</td><td>BBQディナー under the stars</td></tr>
+    <tr><td>20:00</td><td>焚き火タイム（星空観賞）</td></tr>
+    <tr><td>21:00</td><td>ナイトサウナ（夜のサウナは格別）</td></tr>
+    <tr><td>08:00</td><td>朝の散歩、猫たちの朝のルーティンを見学</td></tr>
+    <tr><td>09:00</td><td>カフェでモーニング</td></tr>
+    <tr><td>11:00</td><td>チェックアウト</td></tr>
+  </tbody>
+</table>
+
+<h2>関連記事</h2>
+<ul>
+  <li><a href="/blog/tokyo-70min-glamping/">東京から70分！薪サウナ付き里山グランピング5つの魅力</a></li>
+  <li><a href="/blog/kominka-sauna-chiba/">築200年の古民家で薪サウナ体験 — 千葉・富津「和心村」</a></li>
+  <li><a href="/blog/doubutsu-fureai-chiba/">猫16匹・犬・ヤギと暮らす宿 — 千葉の体験型グランピング</a></li>
+</ul>
+
+<BookingCTA />
+
+</BaseLayout>

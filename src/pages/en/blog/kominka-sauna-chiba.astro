@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema, faqPageSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: 'Wood-Fired Sauna in a 200-Year-Old Kominka — Futtsu, Chiba',
+    description: 'Experience an authentic Finnish wood-fired sauna at a 200-year-old traditional Japanese farmhouse (kominka) in Futtsu, Chiba. Just 70 minutes from Tokyo via the Aqua-Line. Pricing, access, and comparison with Tokyo saunas.',
+    slug: 'kominka-sauna-chiba',
+    datePublished: '2026-02-24',
+    keywords: ['kominka', 'sauna', 'Chiba', 'wood-fired sauna', 'Futtsu', 'glamping', 'totonou'],
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+    { name: 'Wood-Fired Sauna in a 200-Year-Old Kominka', url: 'https://guide.washinmura.jp/en/blog/kominka-sauna-chiba/' },
+  ]),
+  faqPageSchema([
+    { question: 'Is there really a sauna at a kominka?', answer: 'Yes. Washin Village has an authentic Finnish wood-fired sauna on the grounds of its 200-year-old kominka. Overnight guests can use it as many times as they like at no extra charge.', category: 'facilities' },
+    { question: 'Do I need to reserve the sauna in advance?', answer: 'The sauna is reserved exclusively for each group. Simply let us know your preferred time slot at check-in. Outside of peak times, you are free to use it whenever you wish.', category: 'facilities' },
+    { question: 'Can children use the wood-fired sauna?', answer: 'Children are welcome to enter the sauna with a parent or guardian. Please keep a close eye on small children, as the stove uses real firewood. The cold-plunge tub temperature can be adjusted for younger guests.', category: 'facilities' },
+  ]),
+);
+---
+<BaseLayout
+  title="Wood-Fired Sauna in a 200-Year-Old Kominka — Washin Village"
+  description="Experience an authentic Finnish wood-fired sauna at a 200-year-old kominka in Futtsu, Chiba. Just 70 min from Tokyo. Pricing, access, and comparison with city saunas."
+  lang="en"
+  path="/en/blog/kominka-sauna-chiba/"
+  jaPath="/blog/kominka-sauna-chiba/"
+  enPath="/en/blog/kominka-sauna-chiba/"
+  jsonLd={graph}
+>
+
+<h1>Wood-Fired Sauna in a 200-Year-Old Kominka — Futtsu, Chiba</h1>
+
+<p>
+  <strong>Stay in a centuries-old Japanese farmhouse</strong> and <strong>unwind in a genuine wood-fired sauna</strong> — what if you could do both in the same trip? About 70 minutes from Tokyo by car, nestled in the satoyama hills of Futtsu, Chiba, <strong>Washin Village</strong> is one of the rare glamping facilities in Japan where a 200-year-old kominka (traditional farmhouse) and an authentic Finnish wood-fired sauna coexist on the same property.
+</p>
+<p>
+  In this article, we take a deep look at what makes the kominka-meets-sauna experience at Washin Village so special — including how it compares with Tokyo saunas and the nearby SATOYAMA TERRACE.
+</p>
+
+<h2>Why "Kominka + Sauna" Is So Special</h2>
+
+<p>
+  Japan's sauna boom shows no signs of slowing down, with new facilities opening across Tokyo every year. Most of them, however, rely on electric heaters inside commercial buildings. Genuine Finnish-style saunas that burn real firewood are far harder to find. Add in the chance to sleep in a <strong>200-year-old farmhouse</strong>, and Washin Village stands virtually alone.
+</p>
+<p>
+  The kominka here is not a modern replica built to look old. It is the real thing — constructed over two centuries ago with massive exposed beams, earthen walls, and an irori (sunken hearth). Spending a night surrounded by that history, then waking up to a crackling wood-fired sauna the next morning — this fusion of <strong>Japanese tradition and Nordic wellness</strong> is an experience you simply cannot find elsewhere.
+</p>
+<p>
+  The kominka starts at <strong>25,000 yen per night</strong> for the entire building. Split among a group, the per-person cost is comparable to a sauna hotel in central Tokyo — except here the sauna is <strong>free for all overnight guests</strong>. From check-in to check-out, you can enjoy as many sauna sessions as you like at no additional charge.
+</p>
+
+<h2>Five Things That Make Washin Village's Sauna Special</h2>
+
+<p>
+  <strong>1. A genuine wood-fired sauna</strong><br />
+  Forget electric heaters. At Washin Village, you feed real logs into the stove yourself and watch the flames crackle as the room slowly heats up. That unhurried ritual — waiting, watching, breathing in the scent of burning wood — is the first step in leaving the city behind. The natural aroma of firewood fills the cabin and triggers deep relaxation.
+</p>
+<p>
+  <strong>2. Self-service loyly at your own pace</strong><br />
+  Pour water over the sauna stones whenever you feel like it — a practice known in Finnish as <em>loyly</em> (pronounced "LOH-loo"). Aromatic water infused with birch or eucalyptus is provided, letting you send a burst of fragrant steam through the room and raise the perceived temperature on command. You control the intensity, and that freedom is the beauty of self-service loyly.
+</p>
+<p>
+  <strong>3. Cold plunge + open-air rest in the satoyama</strong><br />
+  The full <em>totonou</em> ("reaching equilibrium") cycle is available: sauna, cold-plunge tub, then open-air relaxation. And the outdoor rest here is on a completely different level from anything in the city. Clean mountain air, birdsong, rustling leaves — once you experience nature's own soundtrack while cooling down, a rooftop terrace in Roppongi may never feel quite the same.
+</p>
+<p>
+  <strong>4. Completely private — reserved for your group</strong><br />
+  The sauna operates on a private-reservation basis. Couples, families, and friend groups can enjoy it without worrying about strangers. No queues, no rush, no awkward locker-room encounters — just your own luxurious time.
+</p>
+<p>
+  <strong>5. Free for overnight guests</strong><br />
+  A single session at a Tokyo sauna can easily cost 2,000 to 5,000 yen. At Washin Village, overnight guests pay nothing extra. Morning sauna, afternoon sauna, midnight sauna — it is all included. For serious sauna lovers, the value is hard to beat.
+</p>
+
+<h2>How to Spend Your Time — A 1-Night Kominka + Sauna Itinerary</h2>
+
+<table>
+  <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+  <tbody>
+    <tr><td>15:00</td><td>Check in. Step into the 200-year-old kominka. Take in the massive beams and earthen walls as you settle in</td></tr>
+    <tr><td>15:30</td><td>Explore the grounds. Meet the 16 rescue cats roaming freely around the property</td></tr>
+    <tr><td>16:00</td><td>Head to the sauna. Start by loading the firewood yourself — the cabin reaches temperature in about 20-30 minutes</td></tr>
+    <tr><td>16:30</td><td>Self-service loyly, cold plunge, open-air rest. Repeat the totonou cycle 2-3 times</td></tr>
+    <tr><td>17:30</td><td>Prepare the BBQ. Fresh local Chiba produce goes on the grill</td></tr>
+    <tr><td>18:00</td><td>Dinner under the stars</td></tr>
+    <tr><td>20:00</td><td>Bonfire time. Firewood is free. Sit back and watch the flames</td></tr>
+    <tr><td>21:00</td><td>Night sauna. A sauna session surrounded by nighttime silence is an experience in itself</td></tr>
+    <tr><td>22:00</td><td>Drift off to sleep on futons inside the kominka, wrapped in the warmth of wood and earth</td></tr>
+    <tr><td>07:00</td><td>Morning walk through the satoyama. Wake up to crisp air and birdsong</td></tr>
+    <tr><td>08:00</td><td>Morning sauna. Cold open-air rest in the brisk morning air is the ultimate totonou</td></tr>
+    <tr><td>09:30</td><td>Coffee at the on-site cafe while watching the rescue cats go about their morning routine</td></tr>
+    <tr><td>11:00</td><td>Check out</td></tr>
+  </tbody>
+</table>
+
+<h2>Comparison — Washin Village vs. Tokyo Saunas vs. SATOYAMA TERRACE</h2>
+
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Washin Village</th><th>Tokyo Sauna Facilities</th><th>SATOYAMA TERRACE</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Sauna type</td><td>Authentic Finnish wood-fired</td><td>Mostly electric heaters</td><td>Wood-fired</td></tr>
+    <tr><td>Loyly</td><td>Self-service anytime</td><td>Staff-led events at set times</td><td>Self-service</td></tr>
+    <tr><td>Usage</td><td>Private (free for guests)</td><td>Shared (paid entry)</td><td>Private (may incur extra fee)</td></tr>
+    <tr><td>Outdoor rest setting</td><td>Satoyama nature</td><td>Rooftop / terrace</td><td>Satoyama nature</td></tr>
+    <tr><td>Accommodation</td><td>200-year-old kominka available</td><td>None (day-use only)</td><td>Glamping tents</td></tr>
+    <tr><td>Animal encounters</td><td>16 rescue cats, 2 dogs, 2 goats</td><td>None</td><td>None</td></tr>
+    <tr><td>Access from Tokyo</td><td>70-80 min via Aqua-Line</td><td>Under 30 min by train</td><td>70-80 min via Aqua-Line</td></tr>
+    <tr><td>Price guide</td><td>From 25,000 yen/building (sauna included)</td><td>2,000-5,000 yen per session</td><td>From 20,000 yen/tent</td></tr>
+    <tr><td>Unique appeal</td><td>Only place combining kominka + sauna + rescue cats</td><td>Convenience and city access</td><td>High rating on Sauna Ikitai</td></tr>
+  </tbody>
+</table>
+
+<p>
+  <strong>SATOYAMA TERRACE</strong>, also located in Futtsu, opened in August 2025 and has earned strong reviews on Sauna Ikitai (4,331 votes). While both facilities share wood-fired saunas, Washin Village offers two things no one else can: a <strong>genuine 200-year-old kominka</strong> and <strong>16 rescue cats</strong> living freely on site. If you want a sauna trip that is about more than just the sauna — one that delivers a truly one-of-a-kind overnight experience — Washin Village is the pick.
+</p>
+
+<h2>Access</h2>
+
+<p>
+  <strong>Washin Village</strong>: 14 Takamizo, Futtsu, Chiba<br />
+  <strong>About 70-80 minutes from Tokyo by car</strong> (via the Tokyo Bay Aqua-Line)<br />
+  Take the Aqua-Line from Kawasaki-Ukishima IC, then the Tateyama Expressway to Futtsu-Chuo IC. The village is about 10 minutes from the interchange. Free parking on site.<br />
+  <strong>By train:</strong> Take the JR Uchibo Line to Aobori Station, then a 15-minute taxi ride. Shuttle service is available by advance reservation.<br />
+  Enter "14 Takamizo, Futtsu, Chiba" into your GPS or car navigation.
+</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<details>
+  <summary><strong>Q. Is there really a sauna at a kominka?</strong></summary>
+  <p>Yes. Washin Village has an authentic Finnish wood-fired sauna on the grounds of its 200-year-old kominka. Overnight guests can use it as many times as they like at no extra charge.</p>
+</details>
+
+<details>
+  <summary><strong>Q. Do I need to reserve the sauna in advance?</strong></summary>
+  <p>The sauna is reserved exclusively for each group. Simply let us know your preferred time slot at check-in. Outside of peak times, you are free to use it whenever you wish.</p>
+</details>
+
+<details>
+  <summary><strong>Q. Can children use the wood-fired sauna?</strong></summary>
+  <p>Children are welcome to enter the sauna with a parent or guardian. Please keep a close eye on small children, as the stove uses real firewood. The cold-plunge tub temperature can be adjusted for younger guests.</p>
+</details>
+
+<BookingCTA label="Book the Kominka + Sauna Plan" />
+
+<h2>Related Articles</h2>
+<ul>
+  <li><a href="/en/sauna/">Washin Village Wood-Fired Sauna — Complete Guide</a></li>
+  <li><a href="/en/blog/neko-glamping-kanto/">Glamping with 16 Rescue Cats — The Only Place in Kanto</a></li>
+  <li><a href="/en/blog/doubutsu-fureai-chiba/">Stay with 16 Cats, Dogs & Goats — Hands-On Glamping in Chiba</a></li>
+  <li><a href="/en/rooms/">Rooms — Kominka, Jyubako, Nagayamon, Tent</a></li>
+  <li><a href="/en/experience/">Experiences — BBQ, Bonfire & Cafe</a></li>
+  <li><a href="/en/access/">Access — Getting to Washin Village from Tokyo</a></li>
+</ul>
+
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { ROOMS } from '../../../lib/constants';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Rooms', url: 'https://guide.washinmura.jp/en/rooms/' },
+  ]),
+);
+---
+<BaseLayout
+  title="Room Types — Washin Village"
+  description="4 unique room types at Washin Village: 200-year-old farmhouse, Kengo Kuma Jyubako, Nagayamon gate house, and Nordisk glamping tent. From ¥18,000/night."
+  lang="en"
+  path="/en/rooms/"
+  jaPath="/rooms/"
+  enPath="/en/rooms/"
+  jsonLd={graph}
+>
+
+<h1>Room Types at Washin Village</h1>
+<p>Choose from 4 unique accommodation styles — from a 200-year-old farmhouse to a world-famous architect's mobile house.</p>
+
+<table>
+  <thead>
+    <tr><th>Room</th><th>Type</th><th>Capacity</th><th>Area</th><th>From</th></tr>
+  </thead>
+  <tbody>
+    {ROOMS.map(room => (
+      <tr>
+        <td><a href={`/en/rooms/${room.id}/`}>{room.nameEn}</a></td>
+        <td>{room.typeEn}</td>
+        <td>{room.maxOccupancy} guests</td>
+        <td>{room.area}m²</td>
+        <td>¥{room.priceFrom.toLocaleString()}/night</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<h2>Which Room is Right for You?</h2>
+<table>
+  <thead><tr><th>If you want...</th><th>Choose</th></tr></thead>
+  <tbody>
+    <tr><td>Authentic Japanese experience with cats</td><td>Kominka Main House</td></tr>
+    <tr><td>Design-forward minimal stay for couples</td><td>Jyubako (Kengo Kuma)</td></tr>
+    <tr><td>Space for groups or families (up to 6)</td><td>Nagayamon Gate House</td></tr>
+    <tr><td>Outdoor glamping under the stars</td><td>Nordisk Tent</td></tr>
+  </tbody>
+</table>
+
+<h2>All Rooms Include</h2>
+<ul>
+  <li>Free parking (dedicated space)</li>
+  <li>WiFi access</li>
+  <li>Finnish wood-fired sauna (free)</li>
+  <li>BBQ set with local ingredients</li>
+  <li>Interaction with 16 rescue cats</li>
+</ul>
+
+<BookingCTA />
+</BaseLayout>

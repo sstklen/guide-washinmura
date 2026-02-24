@@ -1,0 +1,77 @@
+---
+// 料金ページ
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import { BUSINESS, ROOMS } from '../lib/constants';
+import { buildGraph, breadcrumbSchema } from '../lib/jsonld';
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: '料金', url: 'https://guide.washinmura.jp/pricing/' },
+  ]),
+);
+---
+
+<BaseLayout
+  title="料金 — 宿泊プラン一覧"
+  description={`和心村の宿泊料金。${ROOMS.map(r => `${r.nameJa}¥${r.priceFrom.toLocaleString()}〜`).join('、')}。サウナ・駐車場無料。`}
+  path="/pricing/"
+  jsonLd={graph}
+>
+
+<h1>料金 — 宿泊プラン一覧</h1>
+
+<blockquote>
+  全プランにBBQセット・サウナ利用・駐車場が含まれています。<br />
+  最新の料金・空き状況は予約サイトでご確認ください。
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>客室</th>
+      <th>定員</th>
+      <th>料金（税込）</th>
+      <th>含まれるもの</th>
+    </tr>
+  </thead>
+  <tbody>
+    {ROOMS.map((room) => (
+      <tr>
+        <td><a href={`/rooms/${room.id}/`}>{room.nameJa}</a></td>
+        <td>{room.maxOccupancy}名</td>
+        <td>¥{room.priceFrom.toLocaleString()}〜/泊</td>
+        <td>BBQ・サウナ・駐車場</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<h2>料金に含まれるもの</h2>
+<ul>
+  <li>✅ 客室利用（チェックイン15:00 〜 チェックアウト11:00）</li>
+  <li>✅ BBQセット（食材・グリル・炭・食器）</li>
+  <li>✅ 薪サウナ利用（何度でも）</li>
+  <li>✅ 無料駐車場</li>
+  <li>✅ WiFi</li>
+  <li>✅ 保護猫とのふれあい</li>
+  <li>✅ 焚き火台・薪</li>
+</ul>
+
+<h2>料金に含まれないもの</h2>
+<ul>
+  <li>❌ 追加の食材・ドリンク</li>
+  <li>❌ アーリーチェックイン・レイトチェックアウト（要相談）</li>
+</ul>
+
+<h2>注意事項</h2>
+<ul>
+  <li>料金はシーズン・曜日によって変動します</li>
+  <li>最新の料金と空き状況は予約サイトでご確認ください</li>
+  <li>キャンセルポリシー：7日前まで無料、3日前まで50%、前日・当日100%</li>
+</ul>
+
+<BookingCTA label="最新料金を確認して予約" />
+
+</BaseLayout>

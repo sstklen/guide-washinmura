@@ -1,0 +1,15 @@
+---
+// JSON-LD 結構化資料注入元件
+// 用法：<JsonLd graph={buildGraph(lodgingBusinessSchema(), breadcrumbSchema(...))} />
+
+interface Props {
+  graph: Record<string, unknown>;
+}
+
+const { graph } = Astro.props;
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(graph, null, 0)}
+/>

@@ -1,0 +1,57 @@
+---
+// 保護貓頁面 — 繁體中文版
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+    { name: '保護貓', url: 'https://guide.washinmura.jp/zh-tw/cats/' },
+  ]),
+);
+---
+<BaseLayout
+  title="16 隻保護貓 — 和心村 Washin Village"
+  description="在和心村與 16 隻保護貓共住。這裡不是貓咖啡廳 — 你是住進貓咪的家。24 小時自然互動。關東地區唯一的「貓×露營」體驗。"
+  lang="zh-Hant"
+  path="/zh-tw/cats/"
+  jaPath="/cats/"
+  enPath="/en/cats/"
+  jsonLd={graph}
+>
+
+<h1>16 隻保護貓 — 住進貓咪的家</h1>
+
+<blockquote>
+  這裡不是貓咖啡廳。你是住進貓咪的家。16 隻保護貓在村莊裡自由活動 — 24 小時自然互動，沒有時間限制。日本關東地區唯一的「貓×豪華露營」體驗。
+</blockquote>
+
+<h2>和貓咖啡廳有什麼不同？</h2>
+<table>
+  <thead><tr><th></th><th>貓咖啡廳</th><th>和心村</th></tr></thead>
+  <tbody>
+    <tr><td>時間限制</td><td>30-60 分鐘</td><td>24 小時（住宿體驗）</td></tr>
+    <tr><td>環境</td><td>室內商業空間</td><td>自然里山村莊</td></tr>
+    <tr><td>互動方式</td><td>有排程、受控制</td><td>自然的，貓咪自由來去</td></tr>
+    <tr><td>貓的「家」</td><td>貓住在營業場所</td><td>貓住在自己的家 — 你是客人</td></tr>
+  </tbody>
+</table>
+
+<h2>關於我們的貓</h2>
+<ul>
+  <li><strong>16 隻保護貓</strong> — 全部從收容所或街頭救援而來</li>
+  <li><strong>自由活動</strong> — 貓咪想去哪就去哪，包括你的房間</li>
+  <li><strong>親人且社會化</strong> — 已經習慣人類訪客</li>
+  <li><strong>還有：2 隻狗和 2 隻山羊</strong> — 一個完整的動物大家庭</li>
+</ul>
+
+<h2>貓過敏資訊</h2>
+<p>由於 16 隻貓在村莊內自由活動，如果你有貓過敏，請提前聯繫我們。<strong>住箱（Jyubako）</strong>和<strong>Nordisk 帳篷</strong>客房較不容易有貓進入，可能適合輕微過敏者。</p>
+
+<h2>共存的理念</h2>
+<p>和心村建立在「人類、動物、自然共存」的理念之上。貓咪不是景點 — 他們是居民。客人被邀請分享他們的空間，體驗在自然環境中與動物共同生活的感覺。</p>
+
+<BookingCTA />
+</BaseLayout>

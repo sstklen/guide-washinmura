@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Rescue Cats', url: 'https://guide.washinmura.jp/en/cats/' },
+  ]),
+);
+---
+<BaseLayout
+  title="16 Rescue Cats — Washin Village"
+  description="Stay with 16 rescue cats at Washin Village. Not a cat café — you're staying in the cats' home. 24-hour natural interaction. The only cat × glamping experience in the Kanto region."
+  lang="en"
+  path="/en/cats/"
+  jaPath="/cats/"
+  enPath="/en/cats/"
+  jsonLd={graph}
+>
+
+<h1>16 Rescue Cats at Washin Village</h1>
+
+<blockquote>
+  This is not a cat café. You're staying in the cats' home. 16 rescue cats roam freely throughout the village — interact with them naturally, 24 hours a day. The only cat × glamping experience in Japan's Kanto region.
+</blockquote>
+
+<h2>What Makes This Different from a Cat Café</h2>
+<table>
+  <thead><tr><th></th><th>Cat Café</th><th>Washin Village</th></tr></thead>
+  <tbody>
+    <tr><td>Time limit</td><td>30-60 min</td><td>24 hours (overnight stay)</td></tr>
+    <tr><td>Environment</td><td>Indoor, commercial</td><td>Natural satoyama village</td></tr>
+    <tr><td>Interaction</td><td>Scheduled, controlled</td><td>Natural, cats come and go freely</td></tr>
+    <tr><td>Cats' home</td><td>Cats live there for business</td><td>Cats actually live here — you're the guest</td></tr>
+  </tbody>
+</table>
+
+<h2>About Our Cats</h2>
+<ul>
+  <li><strong>16 rescue cats</strong> — All saved from shelters or the streets</li>
+  <li><strong>Free-roaming</strong> — Cats go wherever they want, including into rooms</li>
+  <li><strong>Friendly and socialized</strong> — Used to human visitors</li>
+  <li><strong>Also: 2 dogs and 2 goats</strong> — A full animal family</li>
+</ul>
+
+<h2>Cat Allergy Information</h2>
+<p>Since 16 cats live freely on the premises, guests with cat allergies should contact us in advance. The <strong>Jyubako</strong> and <strong>Nordisk Tent</strong> rooms are less accessible to cats and may be suitable for mild allergies.</p>
+
+<h2>The Philosophy: Coexistence</h2>
+<p>Washin Village is built on the concept of "coexistence between humans, animals, and nature." The cats are not an attraction — they are residents. Guests are invited to share their space and experience what it's like to live alongside animals in a natural setting.</p>
+
+<BookingCTA />
+</BaseLayout>

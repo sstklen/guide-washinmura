@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { ROOMS } from '../../lib/constants';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Pricing', url: 'https://guide.washinmura.jp/en/pricing/' },
+  ]),
+);
+---
+<BaseLayout
+  title="Pricing — Washin Village"
+  description="Washin Village room rates from ¥18,000/night. Finnish sauna, BBQ, parking, WiFi included. 4 room types available."
+  lang="en"
+  path="/en/pricing/"
+  jaPath="/pricing/"
+  enPath="/en/pricing/"
+  jsonLd={graph}
+>
+
+<h1>Pricing</h1>
+
+<table>
+  <thead>
+    <tr><th>Room</th><th>Capacity</th><th>From (per night)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Kominka Main House</td><td>Up to 4</td><td>¥25,000~</td></tr>
+    <tr><td>Jyubako (Kengo Kuma × Snow Peak)</td><td>Up to 2</td><td>¥20,000~</td></tr>
+    <tr><td>Nagayamon Gate House</td><td>Up to 6</td><td>¥30,000~</td></tr>
+    <tr><td>Nordisk Glamping Tent</td><td>Up to 4</td><td>¥18,000~</td></tr>
+  </tbody>
+</table>
+
+<h2>What's Included</h2>
+<ul>
+  <li>Finnish wood-fired sauna (private use)</li>
+  <li>BBQ set with local Chiba ingredients</li>
+  <li>Free parking (dedicated space)</li>
+  <li>WiFi in all rooms</li>
+  <li>Bonfire with free firewood</li>
+  <li>24-hour interaction with 16 rescue cats</li>
+</ul>
+
+<h2>Not Included</h2>
+<ul>
+  <li>Transportation to/from the village</li>
+  <li>Additional food and drinks</li>
+  <li>Travel insurance</li>
+</ul>
+
+<h2>Payment</h2>
+<p>Payment is handled through our online reservation system. Credit cards accepted.</p>
+
+<h2>Cancellation Policy</h2>
+<table>
+  <tbody>
+    <tr><th>7+ days before</th><td>Free</td></tr>
+    <tr><th>3-6 days before</th><td>50% charge</td></tr>
+    <tr><th>1-2 days / same day</th><td>100% charge</td></tr>
+  </tbody>
+</table>
+
+<BookingCTA />
+</BaseLayout>

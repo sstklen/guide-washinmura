@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const faqEn = [
+  { cat: 'Access', q: 'How do I get there from Tokyo?', a: 'About 70-80 minutes by car via the Tokyo Bay Aqua-Line and Tateyama Expressway (exit at Futtsu-Chuo IC, then 15 min). By train: JR Uchibo Line to Kazusa-Minato Station, then 15 min by car (free pickup with reservation).' },
+  { cat: 'Access', q: 'Is there parking?', a: 'Yes, free parking with dedicated spaces for each room. Large vehicles are welcome.' },
+  { cat: 'Animals', q: 'How can I interact with the rescue cats?', a: '16 rescue cats roam freely throughout the village. This is not a cat café — you are staying in the cats\' home. You can interact with them naturally, 24 hours a day.' },
+  { cat: 'Animals', q: 'Can I stay if I have cat allergies?', a: 'Since 16 cats live freely on the premises, please contact us in advance if you have allergies. The Jyubako and Nordisk Tent rooms are less accessible to cats.' },
+  { cat: 'Facilities', q: 'What kind of sauna do you have?', a: 'An authentic Finnish wood-fired sauna. You stoke the fire yourself and enjoy löyly (steam). Cold plunge pool and outdoor relaxation area included. Free for all overnight guests.' },
+  { cat: 'Facilities', q: 'Is BBQ available?', a: 'Yes, BBQ sets with local ingredients are included in accommodation plans. Day-trip BBQ plans are also available.' },
+  { cat: 'Booking', q: 'How do I make a reservation?', a: 'Online booking only — phone reservations are not accepted. Book through our official reservation site or contact us via LINE/email.' },
+  { cat: 'Booking', q: 'What are the check-in/check-out times?', a: 'Check-in: 15:00, Check-out: 11:00. Early check-in and late check-out may be available upon request.' },
+  { cat: 'Booking', q: 'What is the cancellation policy?', a: 'Free cancellation up to 7 days before. 50% charge 3 days before. 100% charge for day-before and same-day cancellations.' },
+  { cat: 'General', q: 'Is it family-friendly?', a: 'Yes! Children are very welcome. We have family plans with kids\' perks. The natural environment and animal interaction provide a wonderful experience for children.' },
+  { cat: 'General', q: 'Is there a convenience store nearby?', a: 'The nearest convenience store is about 10 minutes by car. We recommend buying essentials before arriving.' },
+  { cat: 'General', q: 'Does mobile phone reception work?', a: 'docomo, au, and SoftBank signals are available but may be weak in some areas due to the mountain setting. WiFi is available in all rooms.' },
+];
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'FAQ', url: 'https://guide.washinmura.jp/en/faq/' },
+  ]),
+);
+
+const categories = [...new Set(faqEn.map(f => f.cat))];
+---
+<BaseLayout
+  title="FAQ — Washin Village"
+  description="Frequently asked questions about Washin Village: access from Tokyo, cat allergies, sauna details, booking, cancellation policy, and more."
+  lang="en"
+  path="/en/faq/"
+  jaPath="/faq/"
+  enPath="/en/faq/"
+  jsonLd={graph}
+>
+
+<h1>Frequently Asked Questions</h1>
+
+{categories.map(cat => (
+  <>
+    <h2>{cat}</h2>
+    {faqEn.filter(f => f.cat === cat).map(faq => (
+      <div>
+        <h3>Q: {faq.q}</h3>
+        <p>{faq.a}</p>
+      </div>
+    ))}
+  </>
+))}
+
+<BookingCTA />
+</BaseLayout>

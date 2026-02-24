@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Experience', url: 'https://guide.washinmura.jp/en/experience/' },
+  ]),
+);
+---
+<BaseLayout
+  title="Experiences & Activities — Washin Village"
+  description="BBQ with local Chiba ingredients, bonfire under the stars, Finnish sauna, rescue cat interaction, and satoyama café at Washin Village glamping retreat."
+  lang="en"
+  path="/en/experience/"
+  jaPath="/experience/"
+  enPath="/en/experience/"
+  jsonLd={graph}
+>
+
+<h1>Experiences at Washin Village</h1>
+
+<h2>BBQ with Local Ingredients</h2>
+<p>Enjoy a barbecue featuring fresh, locally-sourced ingredients from Chiba Prefecture. BBQ equipment and food set are included in accommodation plans. Day-trip BBQ plans are also available.</p>
+
+<h2>Bonfire</h2>
+<p>Free firewood provided. Sit around the fire under the stars in the quiet satoyama. One of the most popular activities — especially in autumn and winter.</p>
+
+<h2>Finnish Wood-Fired Sauna</h2>
+<p>Self-service löyly, cold plunge, and outdoor relaxation. Free for all overnight guests. <a href="/en/sauna/">Learn more →</a></p>
+
+<h2>Rescue Cat Interaction</h2>
+<p>16 cats roam freely — no schedule, no time limit. They may visit your room, join you at the bonfire, or nap on your hammock. <a href="/en/cats/">Learn more →</a></p>
+
+<h2>Satoyama Café</h2>
+<p>Relax with a drink while taking in the peaceful countryside landscape.</p>
+
+<h2>Suggested 1-Night Itinerary</h2>
+<table>
+  <tbody>
+    <tr><th>15:00</th><td>Check-in, explore the village, meet the cats</td></tr>
+    <tr><th>16:00</th><td>Light the sauna, first sauna session</td></tr>
+    <tr><th>17:30</th><td>Start the BBQ, enjoy sunset</td></tr>
+    <tr><th>19:00</th><td>Bonfire under the stars</td></tr>
+    <tr><th>20:30</th><td>Night sauna session (completely different atmosphere)</td></tr>
+    <tr><th>Morning</th><td>Wake up to cats, enjoy the quiet morning air</td></tr>
+    <tr><th>11:00</th><td>Check-out</td></tr>
+  </tbody>
+</table>
+
+<BookingCTA />
+</BaseLayout>

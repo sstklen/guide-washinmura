@@ -1,0 +1,107 @@
+---
+// 個別客室ページ（動態路由）
+// /rooms/kominka/, /rooms/jyubako/, etc.
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuickFacts from '../../components/QuickFacts.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { BUSINESS, ROOMS } from '../../lib/constants';
+import { buildGraph, breadcrumbSchema, roomSchema, faqPageSchema } from '../../lib/jsonld';
+
+export function getStaticPaths() {
+  return ROOMS.map((room) => ({
+    params: { id: room.id },
+    props: { room },
+  }));
+}
+
+const { room } = Astro.props;
+
+// 各客室に関連する FAQ を 2-3 題選ぶ
+const roomFaq = [
+  {
+    category: 'room' as const,
+    question: `${room.nameJa}の定員は何名ですか？`,
+    answer: `${room.nameJa}の定員は${room.maxOccupancy}名です。${room.type}タイプで、${room.bedType}を${room.bedCount}台ご用意しています。`,
+  },
+  {
+    category: 'room' as const,
+    question: `${room.nameJa}の料金はいくらですか？`,
+    answer: `${room.nameJa}は1泊¥${room.priceFrom.toLocaleString()}〜（税込）です。シーズンやプランによって変動します。最新料金は予約サイトでご確認ください。`,
+  },
+];
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: '客室', url: 'https://guide.washinmura.jp/rooms/' },
+    { name: room.nameJa, url: `https://guide.washinmura.jp/rooms/${room.id}/` },
+  ]),
+  roomSchema(room),
+  faqPageSchema(roomFaq),
+);
+---
+
+<BaseLayout
+  title={`${room.nameJa}（${room.nameEn}）— 客室詳細`}
+  description={`和心村「${room.nameJa}」の詳細情報。${room.highlights[0]}。定員${room.maxOccupancy}名、¥${room.priceFrom.toLocaleString()}〜/泊。`}
+  path={`/rooms/${room.id}/`}
+  jsonLd={graph}
+>
+
+<h1>{room.nameJa}（{room.nameEn}）</h1>
+
+<blockquote>
+  {room.highlights[0]}
+</blockquote>
+
+<QuickFacts facts={[
+  { label: '客室名', value: `${room.nameJa}（${room.nameEn}）` },
+  { label: 'タイプ', value: `${room.type}（${room.typeEn}）` },
+  { label: '定員', value: `${room.maxOccupancy}名` },
+  { label: '面積', value: `${room.area}㎡` },
+  { label: 'ベッド', value: `${room.bedType} × ${room.bedCount}` },
+  { label: '料金', value: `¥${room.priceFrom.toLocaleString()}〜/泊（税込）` },
+  { label: '設備', value: room.amenities.join('・') },
+  { label: '予約', value: 'オンライン予約 → d-reserve.jp' },
+]} />
+
+<BookingCTA />
+
+<h2>What Makes It Special（この客室の魅力）</h2>
+<ol>
+  {room.highlights.map((h) => <li><strong>{h}</strong></li>)}
+</ol>
+
+<h2>設備・アメニティ</h2>
+<ul>
+  {room.amenities.map((a) => <li>{a}</li>)}
+</ul>
+
+{room.notSuitableFor && room.notSuitableFor.length > 0 && (
+  <>
+    <h2>⚠️ 事前にご確認ください</h2>
+    <ul>
+      {room.notSuitableFor.map((note) => <li>{note}</li>)}
+    </ul>
+  </>
+)}
+
+<h2>よくある質問</h2>
+{roomFaq.map((faq) => (
+  <div>
+    <h3>Q: {faq.question}</h3>
+    <p>{faq.answer}</p>
+  </div>
+))}
+
+<h2>他の客室</h2>
+<ul>
+  {ROOMS.filter(r => r.id !== room.id).map((r) => (
+    <li><a href={`/rooms/${r.id}/`}>{r.nameJa}</a> — {r.type}、{r.maxOccupancy}名、¥{r.priceFrom.toLocaleString()}〜</li>
+  ))}
+</ul>
+
+<BookingCTA />
+
+</BaseLayout>

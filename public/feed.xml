@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>和心村ブログ — Washin Village Blog</title>
+    <link>https://guide.washinmura.jp/blog/</link>
+    <description>千葉・房総の里山から、グランピング・サウナ・保護猫のリアルな情報をお届けします。</description>
+    <language>ja</language>
+    <lastBuildDate>Mon, 24 Feb 2026 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://guide.washinmura.jp/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>築200年の古民家で薪サウナ体験 — 千葉・富津「和心村」</title>
+      <link>https://guide.washinmura.jp/blog/kominka-sauna-chiba/</link>
+      <guid>https://guide.washinmura.jp/blog/kominka-sauna-chiba/</guid>
+      <pubDate>Mon, 24 Feb 2026 00:00:00 +0900</pubDate>
+      <description>千葉県富津市の築200年古民家で本格フィンランド式薪サウナ体験。都内サウナ施設やSATOYAMA TERRACEとの比較も。東京から70分。</description>
+    </item>
+
+    <item>
+      <title>【関東唯一】16匹の保護猫と泊まれるグランピング「和心村」</title>
+      <link>https://guide.washinmura.jp/blog/neko-glamping-kanto/</link>
+      <guid>https://guide.washinmura.jp/blog/neko-glamping-kanto/</guid>
+      <pubDate>Mon, 24 Feb 2026 00:00:00 +0900</pubDate>
+      <description>関東で唯一、16匹の保護猫と24時間一緒に過ごせるグランピング。猫カフェとの比較、料金、アクセス情報。</description>
+    </item>
+
+    <item>
+      <title>猫16匹・犬・ヤギと暮らす宿 — 千葉の体験型グランピング</title>
+      <link>https://guide.washinmura.jp/blog/doubutsu-fureai-chiba/</link>
+      <guid>https://guide.washinmura.jp/blog/doubutsu-fureai-chiba/</guid>
+      <pubDate>Mon, 24 Feb 2026 00:00:00 +0900</pubDate>
+      <description>猫16匹、犬2匹、ヤギ2頭と暮らす千葉県の宿泊施設。動物園とは違う「動物の家に泊まる」体験。子連れ家族にも最適。</description>
+    </item>
+
+    <item>
+      <title>隈研吾×Snow Peak「住箱」に泊まれる — 和心村グランピング</title>
+      <link>https://guide.washinmura.jp/blog/kengo-kuma-jyubako/</link>
+      <guid>https://guide.washinmura.jp/blog/kengo-kuma-jyubako/</guid>
+      <pubDate>Mon, 24 Feb 2026 00:00:00 +0900</pubDate>
+      <description>世界的建築家・隈研吾がデザインしたSnow Peakコラボ「住箱」に宿泊できる千葉県のグランピング施設。</description>
+    </item>
+
+    <item>
+      <title>東京から70分！薪サウナ付き里山グランピング5つの魅力</title>
+      <link>https://guide.washinmura.jp/blog/tokyo-70min-glamping/</link>
+      <guid>https://guide.washinmura.jp/blog/tokyo-70min-glamping/</guid>
+      <pubDate>Mon, 24 Feb 2026 00:00:00 +0900</pubDate>
+      <description>東京からアクアライン経由70分の里山グランピング。薪サウナ、保護猫、古民家、BBQ、隈研吾住箱の5つの魅力を紹介。</description>
+    </item>
+
+    <item>
+      <title>保護猫と泊まれる宿 — 泊まるだけで動物保護に貢献できる場所</title>
+      <link>https://guide.washinmura.jp/blog/hogoneko-shukuhaku/</link>
+      <guid>https://guide.washinmura.jp/blog/hogoneko-shukuhaku/</guid>
+      <pubDate>Mon, 24 Feb 2026 00:00:00 +0900</pubDate>
+      <description>関東で保護猫と一緒に泊まれる宿「和心村」。宿泊が動物保護活動の支援になる新しい旅の形。</description>
+    </item>
+
+    <item>
+      <title>富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE</title>
+      <link>https://guide.washinmura.jp/blog/futtsu-glamping-hikaku/</link>
+      <guid>https://guide.washinmura.jp/blog/futtsu-glamping-hikaku/</guid>
+      <pubDate>Mon, 24 Feb 2026 00:00:00 +0900</pubDate>
+      <description>千葉県富津市の人気グランピング施設を徹底比較。和心村とSATOYAMA TERRACEの違い、料金、サウナ、特徴を解説。</description>
+    </item>
+
+  </channel>
+</rss>

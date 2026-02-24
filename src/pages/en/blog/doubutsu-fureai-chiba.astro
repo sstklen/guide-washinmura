@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BookingCTA from '../../../components/BookingCTA.astro';
+import { buildGraph, articleSchema, breadcrumbSchema, faqPageSchema } from '../../../lib/jsonld';
+
+const graph = buildGraph(
+  articleSchema({
+    title: 'Stay with 16 Cats, Dogs & Goats — Animal Glamping in Chiba',
+    description: 'Washin Village in Futtsu, Chiba: 16 cats, 2 dogs, 2 goats living together. Unlike zoos, you stay in the animals\' home. Perfect for families with children.',
+    slug: 'doubutsu-fureai-chiba',
+    datePublished: '2026-02-24',
+    keywords: ['animal encounter', 'accommodation', 'Chiba', 'glamping', 'family', 'rescue cats', 'goats'],
+  }),
+  breadcrumbSchema([
+    { name: 'Home', url: 'https://guide.washinmura.jp/en/' },
+    { name: 'Blog', url: 'https://guide.washinmura.jp/en/blog/' },
+    { name: 'Stay with 16 Cats, Dogs & Goats', url: 'https://guide.washinmura.jp/en/blog/doubutsu-fureai-chiba/' },
+  ]),
+  faqPageSchema([
+    { question: 'Can small children interact with the animals?', answer: 'Yes. The cats come and go freely, so interaction happens naturally. The goats and dogs are friendly and gentle, so even young children feel comfortable around them. We do ask that you remind children not to chase the cats or make loud noises.', category: 'animals' },
+    { question: 'What if someone in our group is not comfortable around animals?', answer: 'Standalone rooms like the Jyubako and Nordisk tent are less likely to have cats wander in. You can control the distance from animals to some degree, so mixed groups with animal-shy members can still enjoy their stay.', category: 'animals' },
+    { question: 'Can we feed the animals?', answer: 'For the animals\' health, we ask guests not to share human food with them. BBQ ingredients in particular can be harmful to cats and dogs. For the goats, the facility provides designated feed that guests are welcome to offer.', category: 'animals' },
+  ]),
+);
+---
+<BaseLayout
+  title="Stay with 16 Cats, Dogs & Goats — Animal Glamping in Chiba | Washin Village"
+  description="Washin Village in Futtsu, Chiba: 16 cats, 2 dogs, 2 goats living together. Unlike zoos, you stay in the animals' home. Perfect for families with children."
+  lang="en"
+  path="/en/blog/doubutsu-fureai-chiba/"
+  jaPath="/blog/doubutsu-fureai-chiba/"
+  enPath="/en/blog/doubutsu-fureai-chiba/"
+  jsonLd={graph}
+>
+
+<h1>Stay with 16 Cats, Dogs & Goats — Animal Glamping in Chiba</h1>
+
+<p>
+  At a zoo, you watch animals through glass. At a petting farm, you get a timed session and then it is over. If you have ever wanted <strong>more</strong> — more time, more closeness, a chance to see animals simply living their lives — there is a place in Chiba that flips the script entirely.
+</p>
+<p>
+  <strong>Washin Village</strong> is a glamping facility in Futtsu, Chiba where 16 rescue cats, 2 dogs, and 2 goats call the property home. Here, humans do not bring animals to them — <strong>you go to the animals' home and stay as their guest</strong>. About 70-80 minutes from Tokyo by car, this satoyama retreat offers a one-night, two-day journey of genuinely living alongside animals.
+</p>
+
+<h2>The "Stay in the Animals' Home" Concept</h2>
+
+<p>
+  At most animal-encounter facilities, the animals are brought to where the people are. At Washin Village, the animals are the original residents and guests arrive afterward. That reversal changes everything. Cats wander wherever they please across the property. Goats stroll the garden. Dogs approach you on their own terms. Because everything runs on animal time, you get to see behavior that is authentic and unforced.
+</p>
+<p>
+  This is especially powerful for children. A zoo teaches them to "look at" animals. Washin Village lets them <strong>live with</strong> animals — watching a cat fall asleep beside them, offering morning feed to the goats, walking a dog through the satoyama hills. These hands-on moments leave a deeper impression than any textbook or educational program ever could.
+</p>
+<p>
+  All 16 cats at Washin Village are rescues — animals that lost their previous homes and found safety here. By staying at the village, you witness animal rescue firsthand. For parents who want to teach their children about compassion and the value of life, Washin Village is an ideal destination.
+</p>
+
+<h2>Meet the Animals</h2>
+
+<p>
+  <strong>16 rescue cats — the entire property is their home</strong><br />
+  The stars of Washin Village are its 16 rescue cats. They move freely through the kominka's engawa (veranda), the terrace, the garden, and even some guest rooms. Some are outgoing lap cats; others prefer to observe from a distance. With 16 different personalities, you are bound to find one that clicks with you. The staff knows every cat's temperament and can point you toward a perfect match.
+</p>
+<p>
+  <strong>2 dogs — your satoyama walking companions</strong><br />
+  Two friendly dogs also live on the property. You can take them along on a morning walk through the surrounding hills. The style of connection with dogs is different from cats — more active, more physical — and children especially love running around the garden with them.
+</p>
+<p>
+  <strong>2 goats — a favorite with kids</strong><br />
+  Two gentle goats roam the grounds. Their calm, unhurried demeanor makes them a hit with young children. Guests can feed them with the facility-provided feed. Having cats, dogs, and goats in one glamping facility is something you will only find at Washin Village in Chiba.
+</p>
+
+<h2>Beyond Animals — Full-Scale Glamping</h2>
+
+<p>
+  Washin Village is not just an animal sanctuary — it is a proper glamping destination. The <strong>authentic Finnish wood-fired sauna</strong> is free for all overnight guests. Self-service <em>loyly</em> (pouring water on sauna stones), a cold-plunge tub, and open-air rest in the satoyama air deliver the full <em>totonou</em> experience. Adults get their own kind of therapy while the kids are busy with the animals.
+</p>
+<p>
+  <strong>BBQ</strong> features local Chiba produce, with all grilling equipment, charcoal, and tableware provided — just show up and cook. <strong>Bonfires</strong> come with free firewood. For kids, toasting marshmallows by a real fire is the kind of memory that lasts a lifetime.
+</p>
+<p>
+  Accommodation options are diverse. The 200-year-old <strong>kominka</strong> (from ¥25,000) is an authentic piece of Japanese architectural history. The <strong>Jyubako</strong> (from ¥20,000), designed by Kengo Kuma with Snow Peak, is a sleek wooden mobile house. The traditional <strong>Nagayamon</strong> gate house (from ¥30,000) offers private, spacious quarters. And the <strong>Nordisk tent</strong> (from ¥18,000) delivers that classic outdoor glamping feel. Pick the one that fits your group's size and style.
+</p>
+
+<h2>How to Spend Your Time — A Family 1-Night Itinerary</h2>
+
+<table>
+  <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+  <tbody>
+    <tr><td>15:00</td><td>Check in. Kids are thrilled by the cats roaming the property. Explore the grounds together</td></tr>
+    <tr><td>15:30</td><td>Feed the goats. Their gentle nature puts even small children at ease</td></tr>
+    <tr><td>16:00</td><td>Relax on the kominka veranda with the cats. Find the family's favorite</td></tr>
+    <tr><td>16:30</td><td>Adults take turns at the sauna while kids play with the dogs in the garden</td></tr>
+    <tr><td>17:30</td><td>BBQ prep — a family affair with plenty of kid-friendly tasks</td></tr>
+    <tr><td>18:00</td><td>Dinner under the stars. Watch the cats gather, drawn by the grill's aroma</td></tr>
+    <tr><td>19:30</td><td>Bonfire and marshmallow toasting — kids are in heaven</td></tr>
+    <tr><td>20:30</td><td>Back to your room. If a cat comes to snuggle, consider it a bonus</td></tr>
+    <tr><td>07:00</td><td>Watch the cats' morning feeding routine up close</td></tr>
+    <tr><td>07:30</td><td>Morning walk with the dogs through the satoyama. Crisp air and birdsong</td></tr>
+    <tr><td>08:30</td><td>Family breakfast at the cafe. Cats wander in to say good morning</td></tr>
+    <tr><td>09:30</td><td>Final animal time. Say goodbye to the goats, dogs, and every last cat</td></tr>
+    <tr><td>11:00</td><td>Check out. "Can we come back?" will be on every child's lips</td></tr>
+  </tbody>
+</table>
+
+<h2>Comparison — Washin Village vs. Zoos, Petting Farms & Tourist Ranches</h2>
+
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Washin Village</th><th>Zoos</th><th>Petting Facilities</th><th>Tourist Ranches</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Closeness to animals</td><td>Share the same living space</td><td>Behind glass / fences</td><td>Designated area only</td><td>Mostly behind fences</td></tr>
+    <tr><td>Interaction time</td><td>~20 hours (overnight)</td><td>Opening hours (viewing only)</td><td>30 min - 1 hour</td><td>Opening hours</td></tr>
+    <tr><td>Overnight stay</td><td>Yes (4 room types)</td><td>No</td><td>No</td><td>Some offer lodging</td></tr>
+    <tr><td>Animal behavior</td><td>Free-roaming, natural</td><td>Captive environment</td><td>Handled frequently</td><td>Semi-free, limited range</td></tr>
+    <tr><td>Animal types</td><td>16 cats, 2 dogs, 2 goats</td><td>Many species</td><td>Rabbits, guinea pigs, etc.</td><td>Cows, sheep, horses, etc.</td></tr>
+    <tr><td>Sauna / BBQ</td><td>Wood-fired sauna, BBQ, bonfire</td><td>None</td><td>None</td><td>Some offer BBQ</td></tr>
+    <tr><td>Rescue impact</td><td>Fees directly fund animal rescue</td><td>Admission funds care</td><td>Generally none</td><td>Generally none</td></tr>
+    <tr><td>Educational value</td><td>"Living with" animals</td><td>"Learning about" animals</td><td>"Touching" animals</td><td>"Learning about" farming</td></tr>
+    <tr><td>Price (family of 4)</td><td>From ¥25,000 (1 night, sauna included)</td><td>¥3,000-6,000</td><td>¥1,000-3,000</td><td>¥2,000-5,000</td></tr>
+  </tbody>
+</table>
+
+<p>
+  Compared on price alone, Washin Village may look more expensive. But a single overnight stay packs in animal encounters, a wood-fired sauna, BBQ, and a bonfire — all in one location. <strong>The experience density per yen is remarkably high.</strong> For families with kids, eliminating the need to drive from attraction to attraction is a major bonus.
+</p>
+
+<h2>Access</h2>
+
+<p>
+  <strong>Washin Village</strong>: 14 Takamizo, Futtsu, Chiba<br />
+  <strong>About 70-80 minutes from Tokyo by car</strong> (via the Tokyo Bay Aqua-Line). Take the Aqua-Line from Kawasaki-Ukishima IC, then the Tateyama Expressway to Futtsu-Chuo IC. The village is about 15 minutes from the interchange.<br />
+  Enter "14 Takamizo, Futtsu, Chiba" into your car navigation. Free parking on site.<br />
+  <strong>By train:</strong> JR Uchibo Line to Aobori Station, then a 15-minute taxi ride. Shuttle service available by advance reservation.<br />
+  Bookings are accepted online only via <strong>d-reserve.jp</strong>.
+</p>
+<p>
+  Families with young children will find driving the easiest option. The Aqua-Line puts you here in just over an hour from central Tokyo, and you can bring car seats, strollers, and all the gear you need without hassle.
+</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<details>
+  <summary><strong>Q. Can small children interact with the animals?</strong></summary>
+  <p>Yes. The cats come and go freely, so interaction happens naturally. The goats and dogs are friendly and gentle, so even young children feel comfortable around them. We do ask that you remind children not to chase the cats or make loud noises.</p>
+</details>
+
+<details>
+  <summary><strong>Q. What if someone in our group is not comfortable around animals?</strong></summary>
+  <p>Standalone rooms like the Jyubako and Nordisk tent are less likely to have cats wander in. You can control the distance from animals to some degree, so mixed groups with animal-shy members can still enjoy their stay.</p>
+</details>
+
+<details>
+  <summary><strong>Q. Can we feed the animals?</strong></summary>
+  <p>For the animals' health, we ask guests not to share human food with them. BBQ ingredients in particular can be harmful to cats and dogs. For the goats, the facility provides designated feed that guests are welcome to offer.</p>
+</details>
+
+<BookingCTA label="Book an animal experience" />
+
+<h2>Related Articles</h2>
+<ul>
+  <li><a href="/en/cats/">Washin Village Rescue Cats — Life with 16 Cats</a></li>
+  <li><a href="/en/blog/neko-glamping-kanto/">Glamping with 16 Rescue Cats — The Only One in Kanto</a></li>
+  <li><a href="/en/blog/kominka-sauna-chiba/">Wood-Fired Sauna in a 200-Year-Old Kominka — Futtsu, Chiba</a></li>
+  <li><a href="/en/rooms/">Rooms — Kominka, Jyubako, Nagayamon, Tent</a></li>
+  <li><a href="/en/experience/">Experiences — BBQ, Bonfire & Cafe</a></li>
+  <li><a href="/en/pricing/">Pricing</a></li>
+  <li><a href="/en/access/">Access — Getting to Washin Village from Tokyo</a></li>
+</ul>
+
+</BaseLayout>

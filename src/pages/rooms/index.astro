@@ -1,0 +1,78 @@
+---
+// 客室一覧ページ
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { BUSINESS, ROOMS } from '../../lib/constants';
+import { buildGraph, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: '客室', url: 'https://guide.washinmura.jp/rooms/' },
+  ]),
+);
+---
+
+<BaseLayout
+  title="客室一覧 — 5タイプの個性的な宿泊施設"
+  description="和心村の5タイプの客室：築200年古民家、隈研吾×Snow Peak住箱、長屋門、Nordiskテント、ツリーハウス。料金・定員・設備の比較一覧。"
+  path="/rooms/"
+  jsonLd={graph}
+>
+
+<h1>客室一覧 — {ROOMS.length}タイプの個性的な宿泊施設</h1>
+
+<blockquote>
+  築200年の古民家から空中のツリーハウスまで。あなたの旅のスタイルに合った一棟を。
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>客室名</th>
+      <th>タイプ</th>
+      <th>定員</th>
+      <th>面積</th>
+      <th>料金（税込）</th>
+    </tr>
+  </thead>
+  <tbody>
+    {ROOMS.map((room) => (
+      <tr>
+        <td><a href={`/rooms/${room.id}/`}><strong>{room.nameJa}</strong></a><br /><small>{room.nameEn}</small></td>
+        <td>{room.type}</td>
+        <td>{room.maxOccupancy}名</td>
+        <td>{room.area}㎡</td>
+        <td>¥{room.priceFrom.toLocaleString()}〜</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+{ROOMS.map((room) => (
+  <section>
+    <h2><a href={`/rooms/${room.id}/`}>{room.nameJa}（{room.nameEn}）</a></h2>
+    <ul>
+      {room.highlights.map((h) => <li>{h}</li>)}
+    </ul>
+    <p>
+      定員: {room.maxOccupancy}名 | 面積: {room.area}㎡ | 料金: ¥{room.priceFrom.toLocaleString()}〜/泊 |
+      設備: {room.amenities.join('・')}
+    </p>
+    {room.notSuitableFor && room.notSuitableFor.length > 0 && (
+      <p><small>⚠️ {room.notSuitableFor.join('、')}</small></p>
+    )}
+    <p><a href={`/rooms/${room.id}/`}>→ {room.nameJa}の詳細</a></p>
+  </section>
+))}
+
+<h2>関連記事</h2>
+<ul>
+  <li><a href="/blog/kengo-kuma-jyubako/">隈研吾×Snow Peak「住箱」に泊まれる — 和心村グランピング</a></li>
+  <li><a href="/blog/kominka-sauna-chiba/">築200年の古民家で薪サウナ体験 — 千葉・富津「和心村」</a></li>
+  <li><a href="/blog/tokyo-70min-glamping/">東京から70分！薪サウナ付き里山グランピング5つの魅力</a></li>
+</ul>
+
+<BookingCTA />
+
+</BaseLayout>

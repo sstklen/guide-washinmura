@@ -1,0 +1,60 @@
+---
+// 三溫暖頁面 — 繁體中文版
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+    { name: '三溫暖', url: 'https://guide.washinmura.jp/zh-tw/sauna/' },
+  ]),
+);
+---
+<BaseLayout
+  title="芬蘭柴火三溫暖 — 和心村 Washin Village"
+  description="和心村正宗芬蘭式柴火三溫暖。自助式蒸氣浴、冷水池、森林露天休息區。住客免費使用。千葉縣富津市，東京出發 80 分鐘。"
+  lang="zh-Hant"
+  path="/zh-tw/sauna/"
+  jaPath="/sauna/"
+  enPath="/en/sauna/"
+  jsonLd={graph}
+>
+
+<h1>芬蘭柴火三溫暖</h1>
+
+<blockquote>
+  正宗芬蘭式柴火三溫暖，坐落在房總半島的里山之中。親手添柴、往石頭上澆水享受蒸氣（löyly）、跳入冷水池、然後在森林中的露天空間放鬆身心。住客免費，不限次數使用。
+</blockquote>
+
+<h2>三溫暖體驗三步驟</h2>
+<ol>
+  <li><strong>加熱</strong> — 柴火三溫暖，自助式蒸氣浴（löyly）。感受真正柴火帶來的自然溫暖。</li>
+  <li><strong>冷卻</strong> — 冷水池一秒恢復精神。</li>
+  <li><strong>放鬆</strong> — 被里山自然環繞的露天休息區。這裡是魔法發生的地方 — 日本人稱之為「ととのう」（身心合一）。</li>
+</ol>
+
+<h2>設施資訊</h2>
+<table>
+  <tbody>
+    <tr><th>類型</th><td>正宗芬蘭式柴火三溫暖</td></tr>
+    <tr><th>蒸氣浴（Löyly）</th><td>可自助操作（往加熱石頭上澆水）</td></tr>
+    <tr><th>冷水池</th><td>有</td></tr>
+    <tr><th>露天休息區</th><td>有（被森林環繞）</td></tr>
+    <tr><th>使用方式</th><td>包場制（每組客人獨享）</td></tr>
+    <tr><th>費用</th><td>住客免費</td></tr>
+  </tbody>
+</table>
+
+<h2>為什麼這裡的三溫暖不一樣？</h2>
+<ul>
+  <li><strong>真正的柴火，不是電熱</strong> — 熱度品質完全不同，木頭的香氣與火焰搖曳是電熱三溫暖無法比擬的</li>
+  <li><strong>你掌控一切</strong> — 自己添柴、自己調整蒸氣，享受完全個人化的體驗</li>
+  <li><strong>大自然環抱</strong> — 坐落在房總半島的里山森林中</li>
+  <li><strong>完全包場</strong> — 每組客人獨享，不與陌生人共用</li>
+  <li><strong>搭配 200 年古民家住宿</strong> — 這種組合在日本獨一無二</li>
+</ul>
+
+<BookingCTA />
+</BaseLayout>

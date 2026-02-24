@@ -1,0 +1,69 @@
+---
+// Quick Facts 表格元件
+// AI 最先讀取的區塊 — 純事實、數字、價格
+
+interface FactRow {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  facts: FactRow[];
+  lastUpdated?: string;
+}
+
+const { facts, lastUpdated = '2026-02-23' } = Astro.props;
+---
+
+<section class="quick-facts" aria-label="Quick Facts">
+  <h2>Quick Facts</h2>
+  <table>
+    <tbody>
+      {facts.map((fact) => (
+        <tr>
+          <th scope="row">{fact.label}</th>
+          <td>{fact.value}</td>
+        </tr>
+      ))}
+      <tr>
+        <th scope="row">最終確認日</th>
+        <td>{lastUpdated}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<style>
+  .quick-facts {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background: #f8fafc;
+  }
+  .quick-facts h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: #334155;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    text-align: left;
+    padding: 0.5rem 1rem 0.5rem 0;
+    color: #64748b;
+    font-weight: 500;
+    white-space: nowrap;
+    vertical-align: top;
+    width: 30%;
+  }
+  td {
+    padding: 0.5rem 0;
+    color: #1e293b;
+  }
+  tr + tr {
+    border-top: 1px solid #e2e8f0;
+  }
+</style>

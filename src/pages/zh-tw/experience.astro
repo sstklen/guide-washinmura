@@ -1,0 +1,56 @@
+---
+// 體驗活動頁面 — 繁體中文版
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import { buildGraph, lodgingBusinessSchema, breadcrumbSchema } from '../../lib/jsonld';
+
+const graph = buildGraph(
+  lodgingBusinessSchema(),
+  breadcrumbSchema([
+    { name: '首頁', url: 'https://guide.washinmura.jp/zh-tw/' },
+    { name: '體驗活動', url: 'https://guide.washinmura.jp/zh-tw/experience/' },
+  ]),
+);
+---
+<BaseLayout
+  title="體驗活動 — 和心村 Washin Village"
+  description="和心村體驗活動：千葉在地食材 BBQ、星空下的營火、芬蘭柴火三溫暖、保護貓互動、里山咖啡。附一泊二日建議行程。"
+  lang="zh-Hant"
+  path="/zh-tw/experience/"
+  jaPath="/experience/"
+  enPath="/en/experience/"
+  jsonLd={graph}
+>
+
+<h1>和心村的體驗活動</h1>
+
+<h2>在地食材 BBQ 烤肉</h2>
+<p>享受千葉縣新鮮在地食材的戶外烤肉。BBQ 設備和食材套餐包含在住宿方案中。也提供不住宿的當日烤肉方案。</p>
+
+<h2>營火</h2>
+<p>免費提供柴火。在寂靜的里山中，圍著營火仰望星空。最受歡迎的活動之一 — 尤其在秋冬季節特別療癒。</p>
+
+<h2>芬蘭柴火三溫暖</h2>
+<p>自助式蒸氣浴、冷水池、露天休息區。住客免費。<a href="/zh-tw/sauna/">了解更多 →</a></p>
+
+<h2>保護貓互動</h2>
+<p>16 隻貓自由漫步 — 沒有時刻表，沒有時間限制。他們可能會來你的房間串門、在營火旁陪你、或在吊床上打盹。<a href="/zh-tw/cats/">了解更多 →</a></p>
+
+<h2>里山咖啡</h2>
+<p>在寧靜的鄉村風景中，喝杯咖啡放鬆身心。</p>
+
+<h2>建議一泊二日行程</h2>
+<table>
+  <tbody>
+    <tr><th>15:00</th><td>辦理入住，探索村莊，認識貓咪們</td></tr>
+    <tr><th>16:00</th><td>點燃三溫暖柴火，享受第一場蒸氣浴</td></tr>
+    <tr><th>17:30</th><td>開始 BBQ 烤肉，欣賞日落</td></tr>
+    <tr><th>19:00</th><td>星空下的營火時間</td></tr>
+    <tr><th>20:30</th><td>夜間三溫暖（白天截然不同的氛圍）</td></tr>
+    <tr><th>隔天早晨</th><td>被貓咪叫醒，享受寧靜的清晨空氣</td></tr>
+    <tr><th>11:00</th><td>退房</td></tr>
+  </tbody>
+</table>
+
+<BookingCTA />
+</BaseLayout>

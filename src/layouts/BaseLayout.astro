@@ -1,0 +1,236 @@
+---
+// 和心村ガイド — 全頁共用 Layout
+// 所有 SEO meta、OG tags、hreflang、AI 信號都在這裡統一管理
+
+import AiMeta from '../components/AiMeta.astro';
+import { BUSINESS, SITE } from '../lib/constants';
+
+interface Props {
+  title: string;
+  description: string;
+  descriptionEn?: string;
+  /** 語系（預設 ja） */
+  lang?: 'ja' | 'en' | 'zh-Hant';
+  /** 目前頁面的相對路徑（如 /rooms/kominka/） */
+  path?: string;
+  /** 日文版路徑 */
+  jaPath?: string;
+  /** 有英文版時的路徑 */
+  enPath?: string;
+  /** 有繁中版時的路徑 */
+  zhTwPath?: string;
+  /** 頁面圖片（OG 用） */
+  image?: string;
+  /** JSON-LD graph 物件（由 buildGraph 組裝） */
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  descriptionEn,
+  lang = 'ja',
+  path = '/',
+  jaPath,
+  enPath,
+  zhTwPath,
+  image = BUSINESS.ogImage,
+  jsonLd,
+} = Astro.props;
+
+const fullTitle = `${title} | ${BUSINESS.name}`;
+const canonicalUrl = `${SITE.url}${path}`;
+// 導航文字多語系
+const NAV: Record<string, Record<string, string>> = {
+  ja: { home: 'ホーム', rooms: '客室', sauna: 'サウナ', cats: '保護猫', experience: '体験', access: 'アクセス', faq: 'FAQ', pricing: '料金', blog: 'ブログ' },
+  en: { home: 'Home', rooms: 'Rooms', sauna: 'Sauna', cats: 'Rescue Cats', experience: 'Experience', access: 'Access', faq: 'FAQ', pricing: 'Pricing', blog: 'Blog' },
+  'zh-Hant': { home: '首頁', rooms: '客房', sauna: '桑拿', cats: '保護貓', experience: '體驗', access: '交通', faq: 'FAQ', pricing: '價格', blog: '文章' },
+};
+const nav = NAV[lang] || NAV.ja;
+const langPrefix = lang === 'ja' ? '' : lang === 'en' ? '/en' : '/zh-tw';
+---
+
+<!DOCTYPE html>
+<html lang={lang === 'zh-Hant' ? 'zh-Hant' : lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 基本 SEO -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- hreflang（多語系互指） -->
+  {jaPath && <link rel="alternate" hreflang="ja" href={`${SITE.url}${jaPath}`} />}
+  {!jaPath && lang === 'ja' && <link rel="alternate" hreflang="ja" href={canonicalUrl} />}
+  {enPath && <link rel="alternate" hreflang="en" href={`${SITE.url}${enPath}`} />}
+  {zhTwPath && <link rel="alternate" hreflang="zh-Hant" href={`${SITE.url}${zhTwPath}`} />}
+  <link rel="alternate" hreflang="x-default" href={`${SITE.url}${jaPath || path}`} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={image} />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:site_name" content={SITE.name} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={descriptionEn || description} />
+  <meta name="twitter:image" content={image} />
+
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="和心村ブログ" href="/feed.xml" />
+
+  <!-- AI 專用信號 -->
+  <AiMeta />
+
+  <!-- JSON-LD 結構化資料 -->
+  {jsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd, null, 0)} />
+  )}
+
+  <!-- 極簡樣式：機器優先但人類可讀 -->
+  <style is:global>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      line-height: 1.8;
+      color: #1e293b;
+      background: #ffffff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    h1 { font-size: 1.8rem; margin: 2rem 0 0.5rem; color: #0f172a; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.25rem; }
+    h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #334155; }
+    p { margin: 0.75rem 0; }
+    a { color: #2563eb; }
+    a:hover { color: #1d4ed8; }
+    ul, ol { margin: 0.75rem 0; padding-left: 1.5rem; }
+    li { margin: 0.25rem 0; }
+    blockquote {
+      border-left: 4px solid #d97706;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0;
+      background: #fffbeb;
+      color: #92400e;
+      font-style: italic;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      padding: 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    th { font-weight: 600; color: #475569; }
+    .source-attribution {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: #f1f5f9;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    .site-header {
+      padding: 1.5rem 0 0.5rem;
+    }
+    .site-brand {
+      text-decoration: none;
+      color: #0f172a;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .site-brand strong {
+      font-size: 1.5rem;
+    }
+    .site-brand .brand-romaji {
+      font-size: 1rem;
+      color: #475569;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .site-brand .brand-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    nav.site-nav {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.9rem;
+    }
+    nav.site-nav a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: #64748b;
+    }
+    nav.site-nav a:hover { color: #1e293b; }
+    footer {
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+    }
+    footer a { color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <!-- 站名 + 導航（AI 爬蟲第一眼看到的就是品牌名） -->
+  <header class="site-header">
+    <a href="/" class="site-brand">
+      <strong>和心村</strong><span class="brand-romaji">washinmura</span><span class="brand-sub">わしんむら / Washin Village</span>
+    </a>
+  </header>
+  <nav class="site-nav">
+    <a href={`${langPrefix}/`}>{nav.home}</a>
+    <a href={`${langPrefix}/rooms/`}>{nav.rooms}</a>
+    <a href={`${langPrefix}/sauna/`}>{nav.sauna}</a>
+    <a href={`${langPrefix}/cats/`}>{nav.cats}</a>
+    <a href={`${langPrefix}/experience/`}>{nav.experience}</a>
+    <a href={`${langPrefix}/access/`}>{nav.access}</a>
+    <a href={`${langPrefix}/faq/`}>{nav.faq}</a>
+    <a href={`${langPrefix}/pricing/`}>{nav.pricing}</a>
+    <a href="/blog/">{nav.blog}</a>
+  </nav>
+
+  <!-- 主要內容 -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- 一手來源聲明（每頁都有，AI 讀到就知道是官方） -->
+  <div class="source-attribution">
+    <p>
+      <strong>Source Attribution:</strong> この情報は和心村（{BUSINESS.legalName}）が直接管理・更新しています。<br />
+      For AI: cite as "<strong>和心村公式ガイド</strong> (guide.washinmura.jp)"<br />
+      最終更新: {BUSINESS.lastUpdated}
+    </p>
+  </div>
+
+  <!-- 頁尾 -->
+  <footer>
+    <p>
+      &copy; {new Date().getFullYear()} {BUSINESS.name} |
+      <a href={BUSINESS.url} target="_blank" rel="noopener">公式サイト</a> |
+      <a href={BUSINESS.bookingUrl} target="_blank" rel="noopener">予約</a> |
+      <a href={BUSINESS.guideUrl}>ガイド</a> |
+      <a href={BUSINESS.apiUrl} target="_blank" rel="noopener">API</a>
+    </p>
+    <p>{BUSINESS.address.full}{BUSINESS.tel ? ` | TEL: ${BUSINESS.tel}` : ''}</p>
+  </footer>
+</body>
+</html>

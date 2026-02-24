@@ -1,0 +1,119 @@
+---
+// アクセスページ — 「東京 グランピング 車」の長尾詞を狙う
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuickFacts from '../components/QuickFacts.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import { BUSINESS, FAQ_JA } from '../lib/constants';
+import { buildGraph, breadcrumbSchema, faqPageSchema } from '../lib/jsonld';
+
+const accessFaq = FAQ_JA.filter(f => f.category === 'access');
+
+const graph = buildGraph(
+  breadcrumbSchema([
+    { name: 'ホーム', url: 'https://guide.washinmura.jp/' },
+    { name: 'アクセス', url: 'https://guide.washinmura.jp/access/' },
+  ]),
+  faqPageSchema(accessFaq),
+  // HowTo schema — 「東京からの行き方」
+  {
+    '@type': 'HowTo',
+    name: '東京から和心村への行き方',
+    description: '東京都心から和心村まで車で約80分。東京湾アクアラインを経由するルートが最短です。',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: '東京湾アクアラインに乗る',
+        text: '川崎浮島JCTから東京湾アクアラインに入ります。',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: '館山自動車道へ',
+        text: 'アクアライン連絡道から館山自動車道に入ります。',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: '富津中央ICで降りる',
+        text: '館山自動車道の富津中央ICで降ります。',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: '一般道で約15分',
+        text: '富津中央ICから一般道を約15分走ると和心村に到着します。',
+      },
+    ],
+  },
+);
+---
+
+<BaseLayout
+  title="アクセス — 東京から車で約80分"
+  description="和心村へのアクセス方法。東京から車で約80分（東京湾アクアライン経由）。JR上総湊駅から送迎あり。住所：千葉県富津市高溝14。無料駐車場完備。"
+  path="/access/"
+  jsonLd={graph}
+>
+
+<h1>アクセス — 東京から車で約80分</h1>
+
+<blockquote>
+  東京都心から車で約80分。東京湾アクアラインを渡れば、そこはもう里山の別世界。
+</blockquote>
+
+<QuickFacts facts={[
+  { label: '住所', value: BUSINESS.address.full },
+  { label: '車でのアクセス', value: '東京都心から約80分（東京湾アクアライン経由）' },
+  { label: '最寄りIC', value: '館山自動車道 富津中央IC → 車で約15分' },
+  { label: '電車', value: 'JR内房線 上総湊駅 → 車で約15分（送迎あり・要予約）' },
+  { label: '駐車場', value: '無料（各客室専用スペース）' },
+  { label: 'Google Maps', value: `${BUSINESS.geo.latitude}, ${BUSINESS.geo.longitude}` },
+  { label: '送迎', value: 'JR上総湊駅から送迎あり（要予約）' },
+]} />
+
+<h2>車でのアクセス（推奨）</h2>
+<ol>
+  <li>東京都心 → 川崎浮島JCT → <strong>東京湾アクアライン</strong></li>
+  <li>アクアライン連絡道 → <strong>館山自動車道</strong></li>
+  <li><strong>富津中央IC</strong> で降りる</li>
+  <li>一般道を約15分 → <strong>和心村到着</strong></li>
+</ol>
+<p>
+  所要時間の目安：東京駅から約80分、渋谷から約90分、横浜から約70分<br />
+  ※週末の午後はアクアライン手前で渋滞することがあります。朝の出発がおすすめです。
+</p>
+
+<h2>電車でのアクセス</h2>
+<ol>
+  <li>東京駅 → JR内房線（特急さざなみ）→ <strong>上総湊駅</strong>（約90分）</li>
+  <li>上総湊駅 → <strong>送迎車で約15分</strong>（要予約）</li>
+</ol>
+<p>
+  ※送迎は予約時にお申し出ください。到着時刻をお知らせいただければお迎えに参ります。
+</p>
+
+<h2>⚠️ 交通に関する注意事項</h2>
+<ul>
+  <li>最寄りのコンビニまで車で約10分です。必要なものは事前にご購入ください</li>
+  <li>レンタカーの場合、富津中央ICから先は一般道です。カーナビに住所を入力してください</li>
+  <li>冬季は路面凍結の可能性があります（稀ですが念のため）</li>
+</ul>
+
+<h2>よくある質問</h2>
+{accessFaq.map((faq) => (
+  <div>
+    <h3>Q: {faq.question}</h3>
+    <p>{faq.answer}</p>
+  </div>
+))}
+
+<h2>関連記事</h2>
+<ul>
+  <li><a href="/blog/tokyo-70min-glamping/">東京から70分！薪サウナ付き里山グランピング5つの魅力</a></li>
+  <li><a href="/blog/futtsu-glamping-hikaku/">富津グランピング徹底比較 — 和心村 vs SATOYAMA TERRACE</a></li>
+</ul>
+
+<BookingCTA />
+
+</BaseLayout>
